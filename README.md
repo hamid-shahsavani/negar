@@ -10,7 +10,7 @@
 ---
 
 ## what is <ins>negar</ins>
-#### &nbsp;&nbsp;&nbsp;&nbsp; call negar in python source and write log in a file</ins> ...<br />
+### &nbsp;&nbsp;&nbsp;&nbsp; call negar in python source and write log in a file</ins> ...<br />
 
 ## description
   + #### text
@@ -39,6 +39,10 @@
       from negar import log
       log(text = 'negar', file = 'log.txt', size = 2)
     ```
-  
+## tips
+  + #### default size : 2
+  + #### size range : 1 to 5 number
+  + #### default log file : log.txt
+  + #### previously defined log file size can'not be resized!
 
 
