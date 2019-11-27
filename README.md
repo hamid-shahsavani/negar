@@ -28,6 +28,11 @@
       size = 55
       # set 'size' for log file size
     ```
-
+## usage
+  + #### method one :blush:
+    ```python
+      import negar
+      negar.log('hello world!')
+    ```
 
 
