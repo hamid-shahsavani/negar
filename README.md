@@ -1,5 +1,3 @@
-#call negar in python source and write log in a file
-
 ---
 
 ![](https://img.shields.io/github/stars/SYS113/negar.svg)
@@ -12,6 +10,6 @@
 ---
 
 > ## what is <ins>negar</ins>
-> * call negar in python source and write log in a file</ins>.<br />
+> * ### call negar in python source and write log in a file</ins>.<br />
 
 > 
