@@ -23,7 +23,7 @@
       file = 'log.txt' 
       # write log to 'log.txt'
     ```
-      + #### size
+  + #### size
     ```python
       size = 55
       # set 'size' for log file size
