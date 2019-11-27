@@ -1,4 +1,4 @@
-#call negar in python source and save log in a file
+#call negar in python source and write log in a file
 
 ---
 
@@ -10,3 +10,6 @@
 ![](https://img.shields.io/badge/license-MIT-informational.svg)
 
 ---
+
+> ## *what is <ins>negar</ins>*
+> * *Tcall negar in python source and write log in a file</ins>.<br />*
