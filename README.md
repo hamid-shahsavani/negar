@@ -41,9 +41,9 @@
     ```
 ---
 ## tips
-   #### 1. default size : 2
-   #### 2. size range : 1 to 5 number
-   #### 3. default log file : log.txt
-   #### 4. previously defined log file size can'not be resized!
+#### &nbsp;&nbsp;&nbsp;&nbsp; 1. default size : 2
+#### &nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 to 5 number
+#### &nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt
+#### &nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!
 
 
