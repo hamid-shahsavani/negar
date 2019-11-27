@@ -46,10 +46,10 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt
 #### &nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!
 ---
-> ## *contact me* 
-> * *[Email](https://051.SYS113@gmail.com)*
-> * *[Telegram](https://t.me/SYS113/)*
-> * *[Instagram](https://instagram.com/sys113/)*
+## *contact me* 
+* *[Email](https://051.SYS113@gmail.com)*
+* *[Telegram](https://t.me/SYS113/)*
+* *[Instagram](https://instagram.com/sys113/)*
 ---
 > ## *donate* 
 #### &nbsp;&nbsp;&nbsp;&nbsp; *You can donate <ins>negar</ins> using the following method ...*
