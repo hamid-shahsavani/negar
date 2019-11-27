@@ -18,6 +18,12 @@
       text = 'x' 
       # write 'text' in log file
     ```
+  + #### file
+    ```python
+      file = 'log.txt' 
+      # write log to 'log.txt'
+    ```
+    
 
 
 
