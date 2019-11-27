@@ -10,7 +10,7 @@
 ---
 
 ## what is <ins>negar</ins>
-&nbsp;&nbsp;&nbsp;&nbsp;#### call negar in python source and write log in a file</ins> ...<br />
+#### &nbsp;&nbsp;&nbsp;&nbsp; call negar in python source and write log in a file</ins> ...<br />
 
 ## description
   + #### text
