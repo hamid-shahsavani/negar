@@ -42,9 +42,10 @@
 ---
 ## *tips*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 1. default size : 2*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 to 5 number*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 ... 5 number (maximum is 5)*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 3. maximum size of python file name is 15*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file : log.txt*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!*
 ---
 ## *contact me* 
 * *[Email](https://051.SYS113@gmail.com)*
