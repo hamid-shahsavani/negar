@@ -45,5 +45,13 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 to 5 number
 #### &nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt
 #### &nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!
-
-
+---
+> ## *contact me* 
+> * *[Email](https://051.SYS113@gmail.com)*
+> * *[Telegram](https://t.me/SYS113/)*
+> * *[Instagram](https://instagram.com/sys113/)*
+---
+> ## *donate* 
+> > *You can donate <ins>negar</ins> using the following method*
+> > > * *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - &nbsp; 6037 9975 7621 6759*
+> > > * *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
