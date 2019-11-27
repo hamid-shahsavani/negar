@@ -14,7 +14,8 @@
 
 > ## description
 >> * #### text
-```text = 'x' 
+```python
+text = 'x' 
 ```
 >>> #### # write 'text' in log file
 ```
