@@ -12,29 +12,29 @@
 ### &nbsp;&nbsp;&nbsp;&nbsp; call <ins>negar</ins> in python source and write log in a file</ins> ...<br />
 ---
 ## *description*
-  + #### text
+  + #### *text*
     ```python
       text = 'x' 
       # write 'text' in log file
     ```
-  + #### file
+  + #### *file*
     ```python
       file = 'log.txt' 
       # write log to 'log.txt'
     ```
-  + #### size
+  + #### *size*
     ```python
       size = 55
       # set 'size' for log file size
     ```
 ---
-## usage
-  + #### method one :blush:
+## *usage*
+  + #### *method one* :blush:
     ```python
       import negar
       negar.log('hello world!')
     ```
-  + #### method two :smile:
+  + #### *method two* :smile:
     ```python
       from negar import log
       log(text = 'negar', file = 'log.txt', size = 2)
@@ -42,9 +42,9 @@
 ---
 ## *tips*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 1. default size : 2*
-#### &nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 to 5 number
-#### &nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt
-#### &nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 to 5 number*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 3. default log file : log.txt*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. previously defined log file size can'not be resized!*
 ---
 ## *contact me* 
 * *[Email](https://051.SYS113@gmail.com)*
