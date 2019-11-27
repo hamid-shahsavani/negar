@@ -6,12 +6,10 @@
 ![](https://img.shields.io/github/release/SYS113/negar.svg)
 ![](https://img.shields.io/github/issues/SYS113/negar.svg)
 ![](https://img.shields.io/badge/license-MIT-informational.svg)
-
 ---
-
 ## what is <ins>negar</ins>
 ### &nbsp;&nbsp;&nbsp;&nbsp; call negar in python source and write log in a file</ins> ...<br />
-
+---
 ## description
   + #### text
     ```python
@@ -28,6 +26,7 @@
       size = 55
       # set 'size' for log file size
     ```
+---
 ## usage
   + #### method one :blush:
     ```python
@@ -39,6 +38,7 @@
       from negar import log
       log(text = 'negar', file = 'log.txt', size = 2)
     ```
+---
 ## tips
   + #### default size : 2
   + #### size range : 1 to 5 number
