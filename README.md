@@ -15,7 +15,7 @@
 > ## description
 >> * #### text
 ```python
-text = 'x' 
+>>> #### text = 'x' 
  ```
 >>> #### # write 'text' in log file
 
