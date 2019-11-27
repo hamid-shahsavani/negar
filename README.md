@@ -34,5 +34,11 @@
       import negar
       negar.log('hello world!')
     ```
+  + #### method two :smile:
+    ```python
+      from negar import log
+      log(text = 'negar', file = 'log.txt', size = 2)
+    ```
+  
 
 
