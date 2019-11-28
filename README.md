@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="350" height="350" src="https://raw.githubusercontent.com/sys113/negar/master/negar.png">
+</p>
+
 ---
 
 ![](https://img.shields.io/github/stars/SYS113/negar.svg)
