@@ -39,13 +39,15 @@
     ```python
       # good
       import negar
-      negar.log('hello world!')
+      print('negar')
+      negar.log('printed negar ...')
     ```
   + #### *method two* :smile:
     ```python
       # excellent
       from negar import log
-      log(text = 'negar', file = 'log.txt', size = 2)
+      print('negar')
+      log(text = 'printed negar ...', file = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
