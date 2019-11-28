@@ -14,28 +14,30 @@
 ## *description*
   + #### *text*
     ```python
-      text = 'x' 
       # write 'text' in log file
+      text = 'negar' 
     ```
   + #### *file*
     ```python
-      file = 'log.txt' 
       # write log to 'log.txt'
+      file = 'negar-log.txt' 
     ```
   + #### *size*
     ```python
-      size = 55
       # set 'size' for log file size
+      size = 2
     ```
 ---
 ## *usage*
   + #### *method one* :blush:
     ```python
+      # good
       import negar
       negar.log('hello world!')
     ```
   + #### *method two* :smile:
     ```python
+      # excellent
       from negar import log
       log(text = 'negar', file = 'log.txt', size = 2)
     ```
