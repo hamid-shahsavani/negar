@@ -70,7 +70,7 @@
 ---
 <div align="center">
 
-#### *negar logo ❤️ mohamad moradiyani*
+*negar logo ❤️ mohamad moradiyani*
 </div>
 
 ---
