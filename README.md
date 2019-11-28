@@ -39,15 +39,15 @@
     ```python
       # good
       import negar
-      print('negar')
-      negar.log('printed negar ...')
+      negar = True
+      negar.log('negar value is '+str(negar)+' ...')
     ```
   + #### *method two* :smile:
     ```python
       # excellent
       from negar import log
       print('negar')
-      log(text = 'printed negar ...', file = 'negar.txt', size = 3)
+      log(text = 'negar value is '+str(negar)+' ...', file = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
