@@ -1,3 +1,5 @@
+# Copyright SYS113 2019. gpl v3.0 license , see readme file.
+
 from tzlocal import get_localzone
 from datetime import datetime
 from platform import system , release , machine
