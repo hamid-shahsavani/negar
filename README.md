@@ -58,7 +58,7 @@
 + *default log file name is log.txt ...*
 + *previously defined log file size can'not be resized!<br />*
 ---
-## *copy right*
+## *copyright*
 *copyright <ins>SYS113</ins> - <ins>2019</ins>.*
 ## *license* 
 *<ins>GPL V3.0</ins> license , please see <ins>license.txt</ins> file.*
