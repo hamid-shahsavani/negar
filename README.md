@@ -40,14 +40,14 @@
       # good
       import negar
       name = 'SYS113'
-      negar.log('SYS113 variable value is '+str(name)+' ...')
+      negar.log('name value is '+str(name)+' ...')
     ```
   + #### *method two* :smile:
     ```python
       # excellent
       from negar import log
       name = 'SYS113'
-      log(text = 'name variable value is '+str(name)+' ...', file = 'negar.txt', size = 3)
+      log(text = 'name value is '+str(name)+' ...', file = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
