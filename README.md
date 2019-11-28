@@ -52,12 +52,11 @@
     ```
 ---
 ## *tips*
-+ *log file default size is 2*
++ *log file default size is 2 ...*
 + *log file size range is 1 ... 5 number (maximum is 5)*
-+ *maximum size of python file name is 15 character*
-+ *default log file name is log.txt*
-+ *5. previously defined log file size can'not be resized!<br />*
-
++ *maximum size of python file name is 15 character ...*
++ *default log file name is log.txt ...*
++ *previously defined log file size can'not be resized!<br />*
 ---
 ## *donate* 
 + *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - &nbsp; 6037 9975 7621 6759*
