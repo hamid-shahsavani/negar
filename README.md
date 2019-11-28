@@ -15,7 +15,7 @@
 
 ---
 ## *what is <ins>negar</ins>*
-#### *call <ins>negar</ins> in your python code and log to a file</ins> ...<br />*
+*call <ins>negar</ins> in your python code and log to a file</ins> ...<br />*
 ---
 ## *description*
   + #### *text*
@@ -51,11 +51,11 @@
     ```
 ---
 ## *tips*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 1. log file default size : 2*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. log file size range : 1 ... 5 number (maximum is 5)*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 3. maximum size of python file name is 15 character*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file name : log.txt*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!<br /><br />*
+*&nbsp;&nbsp;&nbsp;&nbsp; 1. log file default size : 2*
+*&nbsp;&nbsp;&nbsp;&nbsp; 2. log file size range : 1 ... 5 number (maximum is 5)*
+*&nbsp;&nbsp;&nbsp;&nbsp; 3. maximum size of python file name is 15 character*
+*&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file name : log.txt*
+*&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!<br /><br />*
 ---
 ## *contact me* 
 * *[Email](https://051.SYS113@gmail.com)*
@@ -63,8 +63,8 @@
 * *[Instagram](https://instagram.com/sys113/)*
 ---
 ## *donate* 
-+ #### *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - &nbsp; 6037 9975 7621 6759*
-+ #### *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
++ *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - &nbsp; 6037 9975 7621 6759*
++ *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
 ---
 <div align="center">
 
