@@ -39,15 +39,15 @@
     ```python
       # good
       import negar
-      SYS113 = True
-      negar.log('SYS113 variable value is '+str(SYS113)+' ...')
+      name = 'SYS113'
+      negar.log('SYS113 variable value is '+str(name)+' ...')
     ```
   + #### *method two* :smile:
     ```python
       # excellent
       from negar import log
-      SYS113 = True
-      log(text = 'SYS113 variable value is '+str(SYS113)+' ...', file = 'negar.txt', size = 3)
+      name = 'SYS113'
+      log(text = 'name variable value is '+str(name)+' ...', file = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
