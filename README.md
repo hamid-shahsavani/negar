@@ -68,7 +68,7 @@
 ---
 <div align="center">
 
-#### *negar logo ❤️ mohamad Moradiyani*
+#### *negar logo ❤️ mohamad moradiyani*
 </div>
 
 ---
