@@ -40,14 +40,14 @@
       # good
       import negar
       SYS113 = True
-      negar.log('negar variable value is '+str(SYS113)+' ...')
+      negar.log('SYS113 variable value is '+str(SYS113)+' ...')
     ```
   + #### *method two* :smile:
     ```python
       # excellent
       from negar import log
       SYS113 = True
-      log(text = 'negar variable value is '+str(SYS113)+' ...', file = 'negar.txt', size = 3)
+      log(text = 'SYS113 variable value is '+str(SYS113)+' ...', file = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
