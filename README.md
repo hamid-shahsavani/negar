@@ -24,7 +24,7 @@
     ```
   + #### *size*
     ```python
-      # set 'size' for log file size
+      # set 'size' for log file 
       size = 2
     ```
 ---
@@ -43,10 +43,10 @@
     ```
 ---
 ## *tips*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 1. default size : 2*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. size range : 1 ... 5 number (maximum is 5)*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 1. log file default size : 2*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 2. log file size range : 1 ... 5 number (maximum is 5)*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 3. maximum size of python file name is 15 character*
-#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file : log.txt*
+#### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file name : log.txt*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!*
 ---
 ## *contact me* 
