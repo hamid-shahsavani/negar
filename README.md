@@ -20,12 +20,12 @@
 ## *description*
   + #### *text*
     ```python
-      # write 'text' in log file
+      # write 'text' to log file
       text = 'negar' 
     ```
   + #### *file*
     ```python
-      # write log to 'log.txt'
+      # write log to 'negar-log.txt'
       file = 'negar-log.txt' 
     ```
   + #### *size*
