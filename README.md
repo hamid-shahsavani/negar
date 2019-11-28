@@ -52,10 +52,10 @@
     ```
 ---
 ## *tips*
-+ *log file default size : 2*
-+ *log file size range : 1 ... 5 number (maximum is 5)*
++ *log file default size is 2*
++ *log file size range is 1 ... 5 number (maximum is 5)*
 + *maximum size of python file name is 15 character*
-+ *default log file name : log.txt*
++ *default log file name is log.txt*
 + *5. previously defined log file size can'not be resized!<br /><br />*
 
 ---
