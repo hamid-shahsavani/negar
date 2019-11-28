@@ -57,7 +57,7 @@
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file name : log.txt*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!<br /><br />*
 
-#### *maximum text size support ...*
+####     *maximum text size support ...*
 ---
 ## *contact me* 
 * *[Email](https://051.SYS113@gmail.com)*
