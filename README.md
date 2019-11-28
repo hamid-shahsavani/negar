@@ -46,7 +46,7 @@
     ```python
       # excellent
       from negar import log
-      print('negar')
+      negar = True
       log(text = 'negar variable value is '+str(negar)+' ...', file = 'negar.txt', size = 3)
     ```
 ---
@@ -57,11 +57,7 @@
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 4. default log file name : log.txt*
 #### *&nbsp;&nbsp;&nbsp;&nbsp; 5. previously defined log file size can'not be resized!<br /><br />*
 
-<div align="center">
-
-#### maximum text size support ...*
-</div>
-
+#### *maximum text size support ...*
 ---
 ## *contact me* 
 * *[Email](https://051.SYS113@gmail.com)*
