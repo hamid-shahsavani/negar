@@ -15,7 +15,7 @@
 
 ---
 ## *what is <ins>negar</ins>*
-#### *call <ins>negar</ins> in python source and write log in a file</ins> ...<br />*
+#### *call <ins>negar</ins> in your python code and log to a file</ins> ...<br />*
 ---
 ## *description*
   + #### *text*
