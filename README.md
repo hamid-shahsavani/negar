@@ -56,7 +56,7 @@
 + *log file size range is 1 ... 5 number (maximum is 5)*
 + *maximum size of python file name is 15 character*
 + *default log file name is log.txt*
-+ *5. previously defined log file size can'not be resized!<br /><br />*
++ *5. previously defined log file size can'not be resized!<br />*
 
 ---
 ## *contact me* 
