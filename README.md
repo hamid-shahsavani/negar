@@ -58,6 +58,12 @@
 + *default log file name is log.txt ...*
 + *previously defined log file size can'not be resized!<br />*
 ---
+## *copy right*
+*copyright <ins>SYS113</ins> - <ins>2019</ins>.*
+## *license* 
+*<ins>GPL V3.0</ins> license , please see <ins>license.txt</ins> file.*
+
+---
 ## *donate* 
 + *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - &nbsp; 6037 9975 7621 6759*
 + *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
