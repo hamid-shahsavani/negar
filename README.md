@@ -28,10 +28,10 @@
       # write 'text' to log file
       text = 'negar' 
     ```
-  + #### *file*
+  + #### *save*
     ```python
       # write log to 'negar-log.txt'
-      file = 'negar-log.txt' 
+      save = 'negar-log.txt' 
     ```
   + #### *size*
     ```python
@@ -52,7 +52,7 @@
       # excellent
       from negar import log
       name = 'SYS113'
-      log(text = 'name value is '+str(name)+' ...', file = 'negar.txt', size = 3)
+      log(text = 'name value is '+str(name)+' ...', save = 'negar.txt', size = 3)
     ```
 ---
 ## *tips*
