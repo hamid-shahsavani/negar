@@ -18,6 +18,12 @@
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
 ---
+## *example*
+<div align="center">
+  #### *method one* :blush:</div>
+</div>
+
+---
 ## *description*
   + #### *text*
     ```python
