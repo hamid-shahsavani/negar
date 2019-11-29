@@ -19,7 +19,7 @@
 
 ---
 ## *install*
-*python3 -m pip install negar*
+    python3 -m pip install negar
 
 ---
 ## *example*
