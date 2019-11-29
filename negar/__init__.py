@@ -1,0 +1,1 @@
+from .negar import log
