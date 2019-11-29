@@ -18,10 +18,13 @@
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
 ---
+## *install*
+*python3 -m pip install negar*
+
+---
 ## *example*
 + #### *[method one](https://github.com/sys113/negar/raw/master/example/method-one.gif)*
 + #### *[method two](https://raw.githubusercontent.com/sys113/negar/master/example/method-two.gif)*
-
 ---
 ## *description*
   + #### *text*
