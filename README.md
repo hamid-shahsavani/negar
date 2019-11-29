@@ -21,7 +21,7 @@
 ## *example*
 <div align="center">
   
-+ #### *method one* :blush:
+#### *method one* :blush:
 </div>
 
 ---
