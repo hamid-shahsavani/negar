@@ -19,12 +19,7 @@
 
 ---
 ## *example*
-<div align="center">
-  
-#### *method one* :blush:
-<img src="https://github.com/sys113/negar/blob/master/example/method-one.gif" width="600" height="500" />
-
-</div>
+#### *[method one](https://github.com/sys113/negar/blob/master/example/method-one.gif)* :blush:
 
 ---
 ## *description*
