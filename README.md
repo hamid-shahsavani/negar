@@ -19,7 +19,7 @@
 
 ---
 ## *example*
-#### *[method one](https://github.com/sys113/negar/blob/master/example/method-one.gif)* :blush:
++ #### *[method one](https://github.com/sys113/negar/blob/master/example/method-one.gif)*
 
 ---
 ## *description*
@@ -40,14 +40,14 @@
     ```
 ---
 ## *usage*
-  + #### *method one* :blush:
+  + #### *method one*
     ```python
       # good
       import negar
       name = 'SYS113'
       negar.log('name value is '+str(name)+' ...')
     ```
-  + #### *method two* :smile:
+  + #### *method two* 
     ```python
       # excellent
       from negar import log
