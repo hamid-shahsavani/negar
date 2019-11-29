@@ -20,7 +20,7 @@
 ---
 ## *example*
 <div align="center">
-  #### *method one* :blush:</div>
+#### *method one* :blush:
 </div>
 
 ---
