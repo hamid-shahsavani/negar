@@ -19,7 +19,7 @@
 
 ---
 ## *example*
-+ #### *[method one](../example/method-one.gif)*
++ #### *[method one](https://github.com/sys113/negar/raw/master/example/method-one.gif)*
 
 ---
 ## *description*
