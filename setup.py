@@ -16,6 +16,7 @@ setup(
   url = "https://github.com/sys113/negar",
   keywords = ["negar", "log", "save"],
   install_requires=['tzlocal'],
+  include_package_data = True,
   classifiers=[
     "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
