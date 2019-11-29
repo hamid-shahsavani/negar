@@ -22,8 +22,7 @@
 <div align="center">
   
 #### *method one* :blush:
-
-![Alt Text](https://github.com/sys113/negar/blob/master/example/method-one.gif)
+<img src="https://github.com/sys113/negar/blob/master/example/method-one.gif" width="40" height="40" />
 
 </div>
 
