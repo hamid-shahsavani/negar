@@ -20,10 +20,10 @@
 ---
 ## *example*
 <div align="center">
-![Alt Text](https://github.com/sys113/negar/blob/master/example/method-one.gif)
   
 #### *method one* :blush:
 
+![Alt Text](https://github.com/sys113/negar/blob/master/example/method-one.gif)
 
 </div>
 
