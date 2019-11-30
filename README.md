@@ -106,7 +106,7 @@
 
 ---
 ## *license* 
-*<ins>GPL V3.0</ins> license , please see <ins>license.txt</ins> file.*
+*<ins>MIT</ins> license , please see <ins>LICENSE</ins> file.*
 
 ---
 ## *donate* 
