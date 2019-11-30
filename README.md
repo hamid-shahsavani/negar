@@ -18,8 +18,15 @@
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
 ---
-## *installation*
-    python3 -m pip install negar
+## *install*
+
++ ### *nstallation method by pip*
+    # linux
+    sudo python3 -m pip install negar
+    # windows
+    py -m pip install negar
+    
+
 
 ---
 ## *example*
@@ -66,13 +73,13 @@
     ```
 ---
 ## *tips*
-+ log file default size is 2 ...
-+ log file size range is 1 ... 5 number ...
-+ maximum size of python file name support is 15 character ...
-+ maximum number to numbering lines support is 9999999 ...
-+ maximum python source code line number support is 999999 ...
-+ default log file name is log.txt ...*
-+ previously defined log file size can'not be resized!<br />*
++ *log file default size is 2 ...*
++ *log file size range is 1 ... 5 number ...*
++ *maximum size of python file name support is 15 character ...*
++ *maximum number to numbering lines support is 9999999 ...*
++ *maximum python source code line number support is 999999 ...*
++ *default log file name is log.txt ...*
++ *previously defined log file size can'not be resized!<br />*
 ---
 ## *copyright*
 *copyright <ins>SYS113</ins> - <ins>2019</ins>.*
