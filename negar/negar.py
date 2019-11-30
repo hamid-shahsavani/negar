@@ -308,6 +308,9 @@ def log(text=None,save=None,size=None):
 			log_file_number = str(number_line)+' '
 		elif len(str(number_line)) == 7:
 			log_file_number = str(number_line)
+		else:
+			print('negar module - error | python file : '+python_file+' | line : '+line_python_file+' | problem : maximum number to numbering lines support is 9999999 ...')
+			return
 
 		# open log file ...
 
