@@ -10,7 +10,7 @@
 ![](https://img.shields.io/github/forks/SYS113/negar.svg)
 ![](https://img.shields.io/github/release/SYS113/negar.svg)
 ![](https://img.shields.io/github/issues/SYS113/negar.svg)
-![](https://img.shields.io/badge/license-GPL3-informational.svg)
+![](https://img.shields.io/badge/license-MIT-informational.svg)
 </div>
 
 ---
