@@ -43,6 +43,7 @@
 + 0.2.0
 
 	- create CHANGELOG file
+	- create TODO file
 	- change license 
 		* from gpl v3.0 to MIT license
 	- fix bugs reported
