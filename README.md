@@ -20,12 +20,31 @@
 ---
 ## *install*
 
-+ #### *nstallation method by pip*
++ #### *installation method by pip*
 
-    // linux
-    sudo python3 -m pip install negar
-    // windows
-    py -m pip install negar
+      # linux
+      
+      sudo python3 -m pip install negar
+      
+      # windows
+      
+      py -m pip install negar
+      
++ #### *installation method by setup.py*
+
+      # linux
+      
+      git clone https://github.com/sys113/negar.git
+      cd negar
+      sudo python3 setup.py install
+      
+      # windows
+      
+      download https://github.com/sys113/negar/archive/master.zip and extract ...
+      cd negar-master
+      py setup.y install
+      
+ 
     
 
 
