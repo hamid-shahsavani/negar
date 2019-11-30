@@ -44,5 +44,5 @@
 
 	- create CHANGELOG file
 	- change license 
-		* from gpl v3.0 to mit license
+		* from gpl v3.0 to MIT license
 	- fix bugs reported
