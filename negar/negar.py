@@ -1,4 +1,4 @@
-# Copyright SYS113 2019. gpl v3.0 license , see readme file.
+# Copyright SYS113 2019. MIT license , see readme file.
 
 # import librarys ...
 
