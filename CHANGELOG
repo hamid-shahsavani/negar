@@ -1,10 +1,47 @@
-- 0.1.0
++ 0.1.0
 
-	* license
+	 - license
 		* gpl v3.0
     
-  * set log file size
-    * default is 2
-    * range 1 ... 5
+	-  set log file size
+		* default is 2
+    		* range 1 ... 5
     
-  * set log file name
+    	- set log file name
+		* default log.txt
+		
+	- auto python source code line detection
+		* maximum python source code line number support is 999999 
+	
+	- auto python source code file name detection
+		* maximum size of python file name is 15 character
+		
+	- auto date derection
+	
+	- auto time detection
+	
+	- numbering for each line
+		* maximum number to numbering lines is 9999999
+		
+	- auto continent detection
+		* no need network connection
+	
+	- auto country detection
+		* no need network connection
+	
+	- auto city capital detection
+		* no need network connection
+		
+	- auto username detection
+	
+	- auto os detection
+	
+	- auto os version detection
+	
+	- auto architecture detection
+	
++ 0.2.0
+
+	- create CHANGELOG file
+	- change license from gpl v3.0 to mit license
+	- fix bugs reported
