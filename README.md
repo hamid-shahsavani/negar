@@ -20,7 +20,7 @@
 ---
 ## *install*
 
-+ #### *installation method by pip*
++ #### *installation by pip*
 
       # linux
       
@@ -30,7 +30,7 @@
       
       py -m pip install negar
       
-+ #### *installation method by setup.py*
++ #### *installation by setup.py*
 
       # linux
       
