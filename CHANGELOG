@@ -1,0 +1,10 @@
+- 0.1.0
+
+	* license
+		* gpl v3.0
+    
+  * set log file size
+    * default is 2
+    * range 1 ... 5
+    
+  * set log file name
