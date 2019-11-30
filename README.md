@@ -81,7 +81,7 @@
 
 ---
 ## *donate* 
-+ *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - idpay.ir/sys113*
++ *for <ins>iranian</ins> users &nbsp; :  &nbsp;&nbsp; <ins>meli bank</ins> &nbsp;&nbsp;&nbsp; - https://idpay.ir/sys113*
 + *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
 ---
 ## *contact me* 
