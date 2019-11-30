@@ -14,14 +14,14 @@
 		* maximum python source code line number support is 999999 
 	
 	- auto python source code file name detection
-		* maximum size of python file name is 15 character
+		* maximum size of python file name support is 15 character
 		
 	- auto date derection
 	
 	- auto time detection
 	
 	- numbering for each line
-		* maximum number to numbering lines is 9999999
+		* maximum number to numbering lines support is 9999999
 		
 	- auto continent detection
 		* no need network connection
