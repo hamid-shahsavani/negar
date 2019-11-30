@@ -20,10 +20,11 @@
 ---
 ## *install*
 
-+ ### *nstallation method by pip*
-    # linux
++ #### *nstallation method by pip*
+
+    // linux
     sudo python3 -m pip install negar
-    # windows
+    // windows
     py -m pip install negar
     
 
