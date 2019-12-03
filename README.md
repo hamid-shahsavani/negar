@@ -106,9 +106,9 @@
 + *for <ins>global</ins> users &nbsp; : &nbsp;<ins>BTC wallet id</ins>&nbsp; - &nbsp; 149JgUmFqG6MvFg79Ldrvdk2bN35ByhMuw*
 ---
 ## *contact me* 
-* *[Email](https://051.SYS113@gmail.com)*
-* *[Telegram](https://t.me/SYS113/)*
-* *[Instagram](https://instagram.com/sys113/)*
+* *[email](https://051.SYS113@gmail.com)*
+* *[telegram](https://t.me/SYS113/)*
+* *[instagram](https://instagram.com/sys113/)*
 ---
 ## *last world*
 *hope this is <ins>negar</ins> useful to you and enjoy it.*
