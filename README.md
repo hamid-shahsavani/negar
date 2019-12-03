@@ -34,11 +34,11 @@
 
       # linux
       
-      sudo python3 -m pip install https://github.com/sys113/negar/archive/0.2.0.zip
+      sudo python3 -m pip install https://github.com/sys113/negar/archive/0.3.0.zip
       
       # windows
       
-      py -m pip install https://github.com/sys113/negar/archive/0.2.0.zip
+      py -m pip install https://github.com/sys113/negar/archive/0.3.0.zip
 
 ---
 ## *example*
