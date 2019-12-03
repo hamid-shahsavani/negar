@@ -18,9 +18,9 @@
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
 ---
-## *install*
+## *instalationl*
 
-+ #### *installation by pip*
++ #### *install by pip*
 
       # linux
       
@@ -30,7 +30,7 @@
       
       py -m pip install negar
       
-+ #### *installation by setup.py*
++ #### *install by setup.py*
 
       # linux
       
@@ -39,10 +39,6 @@
       # windows
       
       py -m pip install https://github.com/sys113/negar/archive/0.2.0.zip
-      
- 
-    
-
 
 ---
 ## *example*
