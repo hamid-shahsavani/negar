@@ -52,3 +52,9 @@
 	- update README.md
 	
 	- fix bugs reported
+
++ 0.3.0
+
+	- convert negar source code to be pep8 style ...
+
+	- fix bug write country to log file ...
