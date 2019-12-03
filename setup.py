@@ -7,7 +7,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
   name = "negar",
-  version = "0.2.0",
+  version = "0.3.0",
   description = "call negar in your python source code and log to a file ...",
   long_description=long_description,
   long_description_content_type="text/markdown",
