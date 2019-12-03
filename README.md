@@ -34,15 +34,11 @@
 
       # linux
       
-      git clone https://github.com/sys113/negar.git
-      cd negar
-      sudo python3 setup.py install
+      sudo python3 -m pip install https://github.com/sys113/negar/archive/0.2.0.zip
       
       # windows
       
-      download https://github.com/sys113/negar/archive/master.zip and extract ...
-      cd negar-master
-      py setup.y install
+      py -m pip install https://github.com/sys113/negar/archive/0.2.0.zip
       
  
     
