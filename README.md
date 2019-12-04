@@ -18,7 +18,7 @@
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
 ---
-## *instalation*
+## *installation*
 
 + #### *install by pip*
 
