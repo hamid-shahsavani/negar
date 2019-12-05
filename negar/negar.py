@@ -25,6 +25,10 @@ def log(text=None, save=None, size=None):
         error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
         return error_template.format(file_, line, problem)
 
+    # helper function for justify text center with fixed length
+    def justify_text(text_, length):
+        return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
+
     # find (filename or line) python file ...
     x = stack()[1]
     x = x[0]
@@ -119,13 +123,11 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for write python file name in log file ...
-    spaces = (18 - len(python_file))
-    log_file_python_file_name = int(spaces / 2) * ' ' + str(python_file) + int((spaces + 1) / 2) * ' '
+    log_file_python_file_name = justify_text(python_file, 18)
 
     # set value for write line of python file in log file ...
     if len(line_python_file) <= 6:
-        spaces = (6 - len(line_python_file))
-        log_file_python_file_line = int((spaces + 1) / 2) * ' ' + str(line_python_file) + int(spaces / 2) * ' '
+        log_file_python_file_line = justify_text(line_python_file, 6)
     else:
         print(err_temp_func(python_file_name, line_python_file, 'maximum python line number support is 999999 ...'))
         return
@@ -170,11 +172,10 @@ def log(text=None, save=None, size=None):
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # show city , country , continent , username , os , version , architecture in log file ...
-    specifications_center = '%s < %s < %s | %s | %s > %s > %s' % (
+    spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
         city, country, continent, username, os, version, architecture)
-    specifications = ' |  num  |    date    |   time   |' + ' ' * int(
-        len(specifications_center) / log_file_size) + specifications_center + ' ' * int(
-        len(specifications_center) / log_file_size) + '|       file       | line | '
+    spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
+    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       | line | '
 
     # if is not log file ...
     if not isfile(log_file_name):
@@ -191,9 +192,9 @@ def log(text=None, save=None, size=None):
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
 
         # write 'log' to log file ...
-        log_file.write('  |   ' + str(1) + '   | ' + date + ' | ' + time + ' | ' + str(text) + ' ' * (
-                len(specifications) - (len(log_file_text) + len(
-            log_file_python_file_name) + 45)) + '|' + log_file_python_file_name + '|' + log_file_python_file_line + '|' + '\n')
+        log_file.write('  |   ' + str(1) + '   | ' + date + ' | ' + time + ' | ' + str(text) +
+                       ' ' * (len(spec_center) - (len(log_file_text) + 1)) + '|' + log_file_python_file_name +
+                       '|' + log_file_python_file_line + '|' + '\n')
 
         # write ' ___ ' to log file ...
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
@@ -225,8 +226,7 @@ def log(text=None, save=None, size=None):
 
         # set value for log file line number ...
         if len(str(number_line)) <= 7:
-            spaces = (7 - len(str(number_line)))
-            log_file_number = int(spaces / 2) * ' ' + str(number_line) + int((spaces + 1) / 2) * ' '
+            log_file_number = justify_text(number_line, 7)
         else:
             print(err_temp_func(python_file_name, line_python_file,
                                 'maximum number to numbering lines support is 9999999 ...'))
@@ -236,10 +236,9 @@ def log(text=None, save=None, size=None):
         log_file = open(log_file_name, 'a')
 
         # add new 'log' to log file ...
-        log_file.write('  |' + log_file_number + '| ' + date + ' | ' + time + ' | ' + str(text) + ' ' * (
-                len(specifications) - (len(log_file_text) +
-                                       len(
-                                           log_file_python_file_name) + 45)) + '|' + log_file_python_file_name + '|' + log_file_python_file_line + '|' + '\n')
+        log_file.write('  |' + log_file_number + '| ' + date + ' | ' + time + ' | ' + str(text) +
+                       ' ' * (len(spec_center) - (len(log_file_text) + 1)) + '|' + log_file_python_file_name +
+                       '|' + log_file_python_file_line + '|' + '\n')
 
         # write ' ___ ' to log file ...
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')

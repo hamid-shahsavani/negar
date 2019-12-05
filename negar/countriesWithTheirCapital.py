@@ -95,7 +95,7 @@ countries = {
     "reykjav": "iceland",
     "new delhi": "india",
     "jakarta": "indonesia",
-    "tehran": "iran22",
+    "tehran": "iran",
     "baghdad": "iraq",
     "dublin": "ireland",
     "jerusalem": "israel",
