@@ -1,26 +1,31 @@
 # Copyright SYS113 2019. MIT license , see README.md file.
 
 # import libraries ...
-
 from tzlocal import get_localzone
 from datetime import datetime
 from platform import system, release, machine
 from getpass import getuser
 from os.path import isfile
 from inspect import getframeinfo, stack
-from json import load
+from negar.countriesWithTheirCapital import countries
 
 
 # create log function ...
-
 def log(text=None, save=None, size=None):
+    # helper function for country capital
+    def get_country(_city):
+        data = countries
+        if _city in data:
+            return data[_city]
+        else:
+            return 'unknown'
+
     # helper function for negar module errors printing
     def err_temp_func(file_, line, problem):
         error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
         return error_template.format(file_, line, problem)
 
     # find (filename or line) python file ...
-
     x = stack()[1]
     x = x[0]
     get_log_file_python_file_name_or_line = getframeinfo(x)
@@ -36,12 +41,10 @@ def log(text=None, save=None, size=None):
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # set value for find line in python file ...
-
     line_python_file = str(get_log_file_python_file_name_or_line.lineno)
 
     # set value for find python file name ...
-
-    python_file_name = str(get_log_file_python_file_name_or_line.filename)
+    python_file_name = str(get_log_file_python_file_name_or_line.filename.split('/')[-1])
 
     if python_file_name == '<stdin>':
         python_file = 'interpreter'
@@ -52,7 +55,6 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for save log in a file ...
-
     if isinstance(save, str):
         log_file = save
     elif save is None:
@@ -62,7 +64,6 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for log text ...
-
     if text is None:
         print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
         return
@@ -76,7 +77,6 @@ def log(text=None, save=None, size=None):
         log_text = text
 
     # set value for log file size ...
-
     if size is None:
         log_size = 2
     elif not isinstance(size, int):
@@ -102,7 +102,6 @@ def log(text=None, save=None, size=None):
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # check cheacter size ...
-
     if (log_size == 1) and (len(log_text) > 69):
         print(err_temp_func(python_file_name, line_python_file, '\'size = 1\' maximum 69 character support ...'))
         return
@@ -120,12 +119,10 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for write python file name in log file ...
-
     spaces = (18 - len(python_file))
     log_file_python_file_name = int(spaces / 2) * ' ' + str(python_file) + int((spaces + 1) / 2) * ' '
 
     # set value for write line of python file in log file ...
-
     if len(line_python_file) <= 6:
         spaces = (6 - len(line_python_file))
         log_file_python_file_line = int((spaces + 1) / 2) * ' ' + str(line_python_file) + int(spaces / 2) * ' '
@@ -134,65 +131,45 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for write log text in log file ...
-
     log_file_text = log_text
 
     # set value for log file name ...
-
     log_file_name = log_file
 
     # set value for log file size ...
-
     log_file_size = round(((6 - 0.3) / 100) * ((5 - [0.1, 2.9, 3.9, 4.4, 4.7][log_size - 1]) * 20), 1)
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # get continent ...
-
     continent = str(get_localzone()).lower().split('/')[0]
 
     # get city ...
-
     city = str(get_localzone()).lower().split('/')[1]
 
     # get country ...
-
-    def get_country(_city):
-        data = load(open('negar/countriesWithTheirCapital.json', 'r'))
-        if _city in data:
-            return data[_city]
-        else:
-            return 'unknown'
-
     country = str(get_country(city))
 
     # get username ...
-
     username = str(getuser())
 
     # get os ...
-
     os = str(system().lower())
 
     # get version ...
-
     version = str(release().lower())
 
     # get architecture
-
     architecture = str(machine().lower())
 
     # get date ...
-
     date = str(datetime.now()).split(' ')[0]
 
     # get time ...
-
     time = str(datetime.now()).split(' ')[1].split('.')[0]
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # show city , country , continent , username , os , version , architecture in log file ...
-
     specifications_center = '%s < %s < %s | %s | %s > %s > %s' % (
         city, country, continent, username, os, version, architecture)
     specifications = ' |  num  |    date    |   time   |' + ' ' * int(
@@ -200,43 +177,32 @@ def log(text=None, save=None, size=None):
         len(specifications_center) / log_file_size) + '|       file       | line | '
 
     # if is not log file ...
-
     if not isfile(log_file_name):
-
         # create log file ...
-
         log_file = open(log_file_name, 'w')
 
         # write ' ___ ' to log file ...
-
         log_file.write('\n' + '  .' + '_' * (len(specifications) - 4) + '.' + '\n')
 
         # write 'specifications' to log file ...
-
         log_file.write(' ' + specifications + '\n')
 
         # write ' ___ ' to log file ...
-
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
 
         # write 'log' to log file ...
-
         log_file.write('  |   ' + str(1) + '   | ' + date + ' | ' + time + ' | ' + str(text) + ' ' * (
                 len(specifications) - (len(log_file_text) + len(
             log_file_python_file_name) + 45)) + '|' + log_file_python_file_name + '|' + log_file_python_file_line + '|' + '\n')
 
         # write ' ___ ' to log file ...
-
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
 
         # save and close log file ..
-
         log_file.close()
 
     # if is log file ...
-
     elif isfile(log_file_name):
-
         with open(log_file_name, 'r') as f:
             if f.read().splitlines()[-1] != '  .' + '_' * (len(specifications) - 4) + '.':
                 print(err_temp_func(python_file_name, line_python_file,
@@ -252,7 +218,6 @@ def log(text=None, save=None, size=None):
             number_line = int(number_line) + 1
 
         # ckeck log file line number ...
-
         if len(str(number_line)) > 7:
             print(err_temp_func(python_file_name, line_python_file,
                                 '\'size = 5\' maximum line number support is 9999999 ...'))
@@ -268,20 +233,16 @@ def log(text=None, save=None, size=None):
             return
 
         # open log file ...
-
         log_file = open(log_file_name, 'a')
 
         # add new 'log' to log file ...
-
         log_file.write('  |' + log_file_number + '| ' + date + ' | ' + time + ' | ' + str(text) + ' ' * (
                 len(specifications) - (len(log_file_text) +
                                        len(
                                            log_file_python_file_name) + 45)) + '|' + log_file_python_file_name + '|' + log_file_python_file_line + '|' + '\n')
 
         # write ' ___ ' to log file ...
-
         log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
 
         # save and close log file ..
-
         log_file.close()
