@@ -29,6 +29,20 @@ def log(text=None, save=None, size=None):
     def justify_text(text_, length):
         return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
 
+    # helper function for create header row
+    def header_row(header_specs):
+        sep = '—' * (len(header_specs) - 4)
+        out = '\n  .{1}.\n {0}\n  |{1}|\n'.format(header_specs, sep)
+        return out
+
+    # helper function for create each log row
+    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_line_num):
+        out = '  |{}| {} | {} | {}{}|{}|{}|\n'.format(justify_text(row_num, 7), log_date, log_time, row_text,
+                                                      ' ' * (row_log_size - (len(log_file_text) + 1)),
+                                                      row_file_name, row_line_num)
+        out += '  |{}|\n'.format('—' * (len(out) - 5))
+        return out
+
     # find (filename or line) python file ...
     x = stack()[1]
     x = x[0]
@@ -36,11 +50,11 @@ def log(text=None, save=None, size=None):
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
     '''                                                    
-                                                    'find line in python file' variable is 'line_python_file'
-                                                    'find python file name' variable is 'python_file'
-                                                    'save log in a file' variable is 'log_file'
-                                                    'log text' variable is 'log_text'
-                                                    'set log file size' variable is 'log_file_size'
+    'find line in python file' variable is 'line_python_file'
+    'find python file name' variable is 'python_file'
+    'save log in a file' variable is 'log_file'
+    'log text' variable is 'log_text'
+    'set log file size' variable is 'log_file_size'
     '''
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -97,15 +111,15 @@ def log(text=None, save=None, size=None):
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
     '''
-                                        'write python file name in log file' variable is 'log_file_python_file_name'
-                                        'write line of python file in log file' variable is 'log_file_python_file_line'
-                                        'write log text in log file' variable is 'log_file_text'
-                                        'log file name' variable is 'log_file_name'
-                                        'log file size' variable is 'log_file_size'
+    'write python file name in log file' variable is 'justified_python_file'
+    'write line of python file in log file' variable is 'justified_line_python_file'
+    'write log text in log file' variable is 'log_file_text'
+    'log file name' variable is 'log_file_name'
+    'log file size' variable is 'log_file_size'
     '''
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    # check cheacter size ...
+    # check character size ...
     if (log_size == 1) and (len(log_text) > 69):
         print(err_temp_func(python_file_name, line_python_file, '\'size = 1\' maximum 69 character support ...'))
         return
@@ -123,11 +137,11 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for write python file name in log file ...
-    log_file_python_file_name = justify_text(python_file, 18)
+    justified_python_file = justify_text(python_file, 18)
 
     # set value for write line of python file in log file ...
     if len(line_python_file) <= 6:
-        log_file_python_file_line = justify_text(line_python_file, 6)
+        justified_line_python_file = justify_text(line_python_file, 6)
     else:
         print(err_temp_func(python_file_name, line_python_file, 'maximum python line number support is 999999 ...'))
         return
@@ -180,68 +194,46 @@ def log(text=None, save=None, size=None):
     # if is not log file ...
     if not isfile(log_file_name):
         # create log file ...
-        log_file = open(log_file_name, 'w')
+        with open(log_file_name, 'w') as log_file:
+            # write ' ___ ' to log file ...
+            log_file.write(header_row(specifications))
 
-        # write ' ___ ' to log file ...
-        log_file.write('\n' + '  .' + '_' * (len(specifications) - 4) + '.' + '\n')
-
-        # write 'specifications' to log file ...
-        log_file.write(' ' + specifications + '\n')
-
-        # write ' ___ ' to log file ...
-        log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
-
-        # write 'log' to log file ...
-        log_file.write('  |   ' + str(1) + '   | ' + date + ' | ' + time + ' | ' + str(text) +
-                       ' ' * (len(spec_center) - (len(log_file_text) + 1)) + '|' + log_file_python_file_name +
-                       '|' + log_file_python_file_line + '|' + '\n')
-
-        # write ' ___ ' to log file ...
-        log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
-
-        # save and close log file ..
-        log_file.close()
+            # write 'log' to log file ...
+            log_file.write(
+                log_row(1, date, time, text, len(spec_center), justified_python_file, justified_line_python_file))
 
     # if is log file ...
     elif isfile(log_file_name):
         with open(log_file_name, 'r') as f:
-            if f.read().splitlines()[-1] != '  .' + '_' * (len(specifications) - 4) + '.':
+            if f.read().splitlines()[-1] != '  |' + '—' * (len(specifications) - 4) + '|':
                 print(err_temp_func(python_file_name, line_python_file,
-                                    'previously defined log file size , can\'not be resized ...'))
+                                    "previously defined log file size , can't be resized ..."))
                 return
 
         # find line number ...
 
         with open(log_file_name, 'r') as f:
-            number_line = f.read().splitlines()[-2].split('| ' + str(datetime.now().year) + '-', 1)[0]
-            number_line = number_line.replace('|', '')
-            number_line = number_line.replace(' ', '')
-            number_line = int(number_line) + 1
+            line_number = f.read().splitlines()[-2].split('| ' + str(datetime.now().year) + '-', 1)[0]
+            line_number = line_number.replace('|', '')
+            line_number = line_number.replace(' ', '')
+            line_number = int(line_number) + 1
 
         # ckeck log file line number ...
-        if len(str(number_line)) > 7:
+        if len(str(line_number)) > 7:
             print(err_temp_func(python_file_name, line_python_file,
-                                '\'size = 5\' maximum line number support is 9999999 ...'))
+                                "'size = 5' maximum line number support is 9999999 ..."))
             return
 
         # set value for log file line number ...
-        if len(str(number_line)) <= 7:
-            log_file_number = justify_text(number_line, 7)
+        if len(str(line_number)) <= 7:
+            log_file_number = justify_text(line_number, 7)
         else:
             print(err_temp_func(python_file_name, line_python_file,
                                 'maximum number to numbering lines support is 9999999 ...'))
             return
 
         # open log file ...
-        log_file = open(log_file_name, 'a')
-
-        # add new 'log' to log file ...
-        log_file.write('  |' + log_file_number + '| ' + date + ' | ' + time + ' | ' + str(text) +
-                       ' ' * (len(spec_center) - (len(log_file_text) + 1)) + '|' + log_file_python_file_name +
-                       '|' + log_file_python_file_line + '|' + '\n')
-
-        # write ' ___ ' to log file ...
-        log_file.write('  .' + '_' * (len(specifications) - 4) + '.' + '\n')
-
-        # save and close log file ..
-        log_file.close()
+        with open(log_file_name, 'a') as log_file:
+            # add new 'log' to log file ...
+            log_file.write(log_row(log_file_number, date, time, text, len(spec_center), justified_python_file,
+                                   justified_line_python_file))
