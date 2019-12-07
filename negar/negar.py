@@ -11,7 +11,7 @@ from negar.countriesWithTheirCapital import countries
 
 
 # create log function ...
-def log(text=None, save=None, size=None):
+def text(text_log=None, save=None, size=None):
     # helper function for country capital
     def get_country(_city):
         data = countries
@@ -36,10 +36,12 @@ def log(text=None, save=None, size=None):
         return out
 
     # helper function for create each log row
-    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_line_num):
-        out = '  |{}| {} | {} | {}{}|{}|{}|\n'.format(justify_text(row_num, 7), log_date, log_time, row_text,
-                                                      ' ' * (row_log_size - (len(log_file_text) + 1)),
-                                                      row_file_name, row_line_num)
+    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_type, row_line_num):
+        row_num = justify_text(row_num, 7)
+        row_type = justify_text(row_type, 8)
+        out = '  |{num}| {date} | {time} | {text}{pad}|{file}|{type}|{line}|\n'.format(
+            num=row_num, date=log_date, time=log_time, text=row_text, file=row_file_name, type=row_type,
+            line=row_line_num, pad=' ' * (row_log_size - (len(log_file_text) + 1)))
         out += '  |{}|\n'.format('—' * (len(out) - 5))
         return out
 
@@ -82,17 +84,17 @@ def log(text=None, save=None, size=None):
         return
 
     # set value for log text ...
-    if text is None:
+    if text_log is None:
         print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
         return
-    elif not isinstance(text, str):
+    elif not isinstance(text_log, str):
         print(err_temp_func(python_file_name, line_python_file, '\'text\' type is not str ...'))
         return
-    elif text == '':
+    elif text_log == '':
         print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
         return
     else:
-        log_text = text
+        log_text = text_log
 
     # set value for log file size ...
     if size is None:
@@ -183,13 +185,16 @@ def log(text=None, save=None, size=None):
     # get time ...
     time = str(datetime.now()).split(' ')[1].split('.')[0]
 
+    # log type
+    log_type = 'text'
+
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     # show city , country , continent , username , os , version , architecture in log file ...
     spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
         city, country, continent, username, os, version, architecture)
     spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
-    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       | line | '
+    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
 
     # if is not log file ...
     if not isfile(log_file_name):
@@ -200,7 +205,8 @@ def log(text=None, save=None, size=None):
 
             # write 'log' to log file ...
             log_file.write(
-                log_row(1, date, time, text, len(spec_center), justified_python_file, justified_line_python_file))
+                log_row(1, date, time, text_log, len(spec_center), justified_python_file, log_type,
+                        justified_line_python_file))
 
     # if is log file ...
     elif isfile(log_file_name):
@@ -235,5 +241,5 @@ def log(text=None, save=None, size=None):
         # open log file ...
         with open(log_file_name, 'a') as log_file:
             # add new 'log' to log file ...
-            log_file.write(log_row(log_file_number, date, time, text, len(spec_center), justified_python_file,
-                                   justified_line_python_file))
+            log_file.write(log_row(log_file_number, date, time, text_log, len(spec_center), justified_python_file,
+                                   log_type, justified_line_python_file))

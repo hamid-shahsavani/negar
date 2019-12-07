@@ -1,1 +1,1 @@
-from .negar import log
+from .negar import text
