@@ -105,7 +105,7 @@ def text(text_log=None, save=None, size=None):
 
     # set value for log file size ...
     if size is None:
-        log_size = 3
+        log_size = 2
     elif not isinstance(size, int):
         print(err_temp_func(python_file_name, line_python_file, '\'size\' type is not str ...'))
         return
