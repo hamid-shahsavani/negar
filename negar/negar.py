@@ -8,23 +8,41 @@ from subprocess import check_output
 from threading import Thread
 from time import sleep as zzz
 from inspect import getframeinfo, stack
-from random import choice
-from queue import Queue
+from negar.countriesWithTheirCapital import countries
 
-# loading function ...
-def loading(sleep=None, function=None, speed=None, method=None, argument=None, output=None):
 
-    # show error function ...
-    def error(problem):
-        print('tekrar module - error | python file : '+python_file_name +
-              ' | line : '+line_python_file+' | problem : '+problem)
+# create log function ...
+def log(text=None, save=None, size=None):
+    # helper function for country capital
+    def get_country(_city):
+        data = countries
+        if _city in data:
+            return data[_city]
+        else:
+            return 'unknown'
 
-    # colored stars animate functions ...
-    class star:
-        BLUE = '{blue}*'.format(blue='\033[94m')
-        GREEN = '{green}*'.format(green='\033[92m')
-        RED = '{red}*'.format(red='\033[91m')
-        YELLOW = '{yellow}*'.format(yellow='\033[33m')
+    # helper function for negar module errors printing
+    def err_temp_func(file_, line, problem):
+        error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
+        return error_template.format(file_, line, problem)
+
+    # helper function for justify text center with fixed length
+    def justify_text(text_, length):
+        return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
+
+    # helper function for create header row
+    def header_row(header_specs):
+        sep = '—' * (len(header_specs) - 4)
+        out = '\n  .{1}.\n {0}\n  |{1}|\n'.format(header_specs, sep)
+        return out
+
+    # helper function for create each log row
+    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_line_num):
+        out = '  |{}| {} | {} | {}{}|{}|{}|\n'.format(justify_text(row_num, 7), log_date, log_time, row_text,
+                                                      ' ' * (row_log_size - (len(log_file_text) + 1)),
+                                                      row_file_name, row_line_num)
+        out += '  |{}|\n'.format('—' * (len(out) - 5))
+        return out
 
     # find (filename or line) python file ...
     x = stack()[1]
@@ -35,35 +53,52 @@ def loading(sleep=None, function=None, speed=None, method=None, argument=None, o
     line_python_file = str(get_python_file_name_or_line.lineno)
 
     # set value for find python file name ...
-    python_file_name = str(get_python_file_name_or_line.filename)
+    python_file_name = str(get_log_file_python_file_name_or_line.filename.split('/')[-1])
 
-    # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if python_file_name == '<stdin>':
+        python_file = 'interpreter'
+    elif len(python_file_name) < 18:
+        python_file = python_file_name
+    else:
+        print(err_temp_func(python_file_name, line_python_file, 'maximum size of python file name is 15 character ...'))
+        return
 
-    # all argument is None ...
-    if sleep is None:
-        if function is None:
-            if speed is None:
-                if method is None:
-                    if argument is None:
-                        if output is None:
-                            error('please use arguments ...')
+    # set value for save log in a file ...
+    if isinstance(save, str):
+        log_file = save
+    elif save is None:
+        log_file = 'log.txt'
+    else:
+        print(err_temp_func(python_file_name, line_python_file, '\'save\' type is not str ...'))
+        return
 
-    # function has value ...
-    if function is not None:
+    # set value for log text ...
+    if text is None:
+        print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
+        return
+    elif not isinstance(text, str):
+        print(err_temp_func(python_file_name, line_python_file, '\'text\' type is not str ...'))
+        return
+    elif text == '':
+        print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
+        return
+    else:
+        log_text = text
 
-        # set method , default 1 ...
-        if method is None:
-            method = 1
-        elif type(method) is not int:
-            error('\'method\' argument must be number range of 1 to 2 ...')
-            return
-        elif method == 1:
-            method = 1
-        elif method == 2:
-            method = 2
-        elif method > 2:
-            error('\'method\' argument must be number range of 1 to 2 ...')
-            return
+    # set value for log file size ...
+    if size is None:
+        log_size = 2
+    elif not isinstance(size, int):
+        print(err_temp_func(python_file_name, line_python_file, '\'size\' type is not str ...'))
+        return
+    elif size > 5:
+        print(err_temp_func(python_file_name, line_python_file, '\'size\' value range is not (1 ... 5) ...'))
+        return
+    elif size == 0:
+        print(err_temp_func(python_file_name, line_python_file, '\'size\' value is not in range (1 ... 5) ...'))
+        return
+    else:
+        log_size = size
 
         # set value for speed ...
         if speed is None:
@@ -146,60 +181,31 @@ def loading(sleep=None, function=None, speed=None, method=None, argument=None, o
             error('need \'function\' argument to use the \'output\' argument ...')
             return
 
-        # output has value ...
-        if output is not None:
-            error('need \'function\' argument to use the \'output\' argument ...')
-            return
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    # sleep has value ...
-    if sleep is not None:
-        if type(sleep) is not int:
-            error('argument \'sleep\' must be a int type ...')
-            return
+    # show city , country , continent , username , os , version , architecture in log file ...
+    spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
+        city, country, continent, username, os, version, architecture)
+    spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
+    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       | line | '
 
-        # set method , default 1 ...
-        if method is None:
-            method = 1
-        elif type(method) is not int:
-            error('\'method\' argument must be number range of 1 to 2 ...')
-            return
-        elif method == 1:
-            method = 1
-        elif method == 2:
-            method = 2
-        elif method > 2:
-            error('\'method\' argument must be number range of 1 to 2 ...')
-            return
+    # if is not log file ...
+    if not isfile(log_file_name):
+        # create log file ...
+        with open(log_file_name, 'w') as log_file:
+            # write ' ___ ' to log file ...
+            log_file.write(header_row(specifications))
 
-        # set value for speed ...
-        if speed is None:
-            speed = 0.040
-        elif speed is not None:
-            if type(speed) is not int:
-                error('\'speed\' argument must be number range of 1 to 10 ...')
-                return
-            elif speed == 1:
-                speed = 0.020
-            elif speed == 2:
-                speed = 0.030
-            elif speed == 3:
-                speed = 0.040
-            elif speed == 4:
-                speed = 0.050
-            elif speed == 5:
-                speed = 0.060
-            elif speed == 6:
-                speed = 0.070
-            elif speed == 7:
-                speed = 0.080
-            elif speed == 8:
-                speed = 0.090
-            elif speed == 9:
-                speed = 0.200
-            elif speed == 10:
-                speed = 0.350
-            elif speed > 10:
-                error('\'speed\' argument must be number range of 1 to 10 ...')
+            # write 'log' to log file ...
+            log_file.write(
+                log_row(1, date, time, text, len(spec_center), justified_python_file, justified_line_python_file))
+
+    # if is log file ...
+    elif isfile(log_file_name):
+        with open(log_file_name, 'r') as f:
+            if f.read().splitlines()[-1] != '  |' + '—' * (len(specifications) - 4) + '|':
+                print(err_temp_func(python_file_name, line_python_file,
+                                    "previously defined log file size , can't be resized ..."))
                 return
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -689,5 +695,8 @@ def loading(sleep=None, function=None, speed=None, method=None, argument=None, o
             elif method == 2:
                 animate_method_2(speed)
 
-        # return function value ...
-        return return_value.get()
+        # open log file ...
+        with open(log_file_name, 'a') as log_file:
+            # add new 'log' to log file ...
+            log_file.write(log_row(log_file_number, date, time, text, len(spec_center), justified_python_file,
+                                   justified_line_python_file))
