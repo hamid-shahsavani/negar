@@ -36,20 +36,32 @@ def text(text_log=None, save=None, size=None):
         return out
 
     # helper function for create each log row
-    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_line_num):
-        out = '  |{}| {} | {} | {}{}|{}|{}|\n'.format(justify_text(row_num, 7), log_date, log_time, row_text,
-                                                      ' ' * (row_log_size - (len(log_file_text) + 1)),
-                                                      row_file_name, row_line_num)
+    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_type, row_line_num):
+        row_num = justify_text(row_num, 7)
+        row_type = justify_text(row_type, 8)
+        out = '  |{num}| {date} | {time} | {text}{pad}|{file}|{type}|{line}|\n'.format(
+            num=row_num, date=log_date, time=log_time, text=row_text, file=row_file_name, type=row_type,
+            line=row_line_num, pad=' ' * (row_log_size - (len(log_file_text) + 1)))
         out += '  |{}|\n'.format('—' * (len(out) - 5))
         return out
 
     # find (filename or line) python file ...
     x = stack()[1]
     x = x[0]
-    get_python_file_name_or_line = getframeinfo(x)
+    get_log_file_python_file_name_or_line = getframeinfo(x)
 
-    # set valur for find line in python file ...
-    line_python_file = str(get_python_file_name_or_line.lineno)
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''                                                    
+    'find line in python file' variable is 'line_python_file'
+    'find python file name' variable is 'python_file'
+    'save log in a file' variable is 'log_file'
+    'log text' variable is 'log_text'
+    'set log file size' variable is 'log_file_size'
+    '''
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    # set value for find line in python file ...
+    line_python_file = str(get_log_file_python_file_name_or_line.lineno)
 
     # set value for find python file name ...
     python_file_name = str(get_log_file_python_file_name_or_line.filename.split('/')[-1])
@@ -72,17 +84,17 @@ def text(text_log=None, save=None, size=None):
         return
 
     # set value for log text ...
-    if text is None:
+    if text_log is None:
         print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
         return
-    elif not isinstance(text, str):
+    elif not isinstance(text_log, str):
         print(err_temp_func(python_file_name, line_python_file, '\'text\' type is not str ...'))
         return
-    elif text == '':
+    elif text_log == '':
         print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
         return
     else:
-        log_text = text
+        log_text = text_log
 
     # set value for log file size ...
     if size is None:
@@ -99,86 +111,82 @@ def text(text_log=None, save=None, size=None):
     else:
         log_size = size
 
-        # set value for speed ...
-        if speed is None:
-            speed = 0.040
-        elif speed is not None:
-            if type(speed) is not int:
-                error('\'speed\' argument must be number range of 1 to 10 ...')
-                return
-            elif speed == 1:
-                speed = 0.020
-            elif speed == 2:
-                speed = 0.030
-            elif speed == 3:
-                speed = 0.040
-            elif speed == 4:
-                speed = 0.050
-            elif speed == 5:
-                speed = 0.060
-            elif speed == 6:
-                speed = 0.070
-            elif speed == 7:
-                speed = 0.080
-            elif speed == 8:
-                speed = 0.090
-            elif speed == 9:
-                speed = 0.200
-            elif speed == 10:
-                speed = 0.350
-            elif speed > 10:
-                error('\'speed\' argument must be number range of 1 to 10 ...')
-                return
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    '''
+    'write python file name in log file' variable is 'justified_python_file'
+    'write line of python file in log file' variable is 'justified_line_python_file'
+    'write log text in log file' variable is 'log_file_text'
+    'log file name' variable is 'log_file_name'
+    'log file size' variable is 'log_file_size'
+    '''
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        # cannot use simultaneously 'sleep' and 'function' argument ...
-        if sleep is not None:
-            error(
-                'if use \'sleep\' argument , cannot use \'function\' argument and vice versa ...')
-            return
+    # check character size ...
+    if (log_size == 1) and (len(log_text) > 69):
+        print(err_temp_func(python_file_name, line_python_file, '\'size = 1\' maximum 69 character support ...'))
+        return
+    elif (log_size == 2) and (len(log_text) > 93):
+        print(err_temp_func(python_file_name, line_python_file, '\'size = 2\' maximum 93 character support ...'))
+        return
+    elif (log_size == 3) and (len(log_text) > 131):
+        print(err_temp_func(python_file_name, line_python_file, '\'size = 3\' maximum 131 character support ...'))
+        return
+    elif (log_size == 4) and (len(log_text) > 199):
+        print(err_temp_func(python_file_name, line_python_file, '\'size = 4\' maximum 199 character support ...'))
+        return
+    elif (log_size == 5) and (len(log_text) > 397):
+        print(err_temp_func(python_file_name, line_python_file, '\'size = 5\' maximum 397 character support ...'))
+        return
 
-        # argument has value ...
-        if argument is not None:
-            if type(argument) is not list:
-                error('argument \'argument\' must be a list type ...')
-                return
+    # set value for write python file name in log file ...
+    justified_python_file = justify_text(python_file, 18)
 
-        # output no value ...
-        if output is None:
-            output = True
+    # set value for write line of python file in log file ...
+    if len(line_python_file) <= 6:
+        justified_line_python_file = justify_text(line_python_file, 6)
+    else:
+        print(err_temp_func(python_file_name, line_python_file, 'maximum python line number support is 999999 ...'))
+        return
 
-        # output has value ...
-        elif output is not None:
-            if type(output) is not bool:
-                error('argument \'output\' must be boolean type ...')
-                return
+    # set value for write log text in log file ...
+    log_file_text = log_text
 
-    # function no value ...
-    elif function is None:
+    # set value for log file name ...
+    log_file_name = log_file
 
-        # sleep no value ...
-        if sleep is None:
+    # set value for log file size ...
+    log_file_size = round(((6 - 0.3) / 100) * ((5 - [0.1, 2.9, 3.9, 4.4, 4.7][log_size - 1]) * 20), 1)
+    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            # sleep has value ...
-            if speed is not None:
-                error(
-                    'need \'sleep\' or \'function\' argument to use the \'speed\' argument ...')
-                return
+    # get continent ...
+    continent = str(get_localzone()).lower().split('/')[0]
 
-            # method has value ...
-            elif method is not None:
-                error(
-                    'need \'sleep\' or \'function\' argument to use the \'method\' argument ...')
-                return
+    # get city ...
+    city = str(get_localzone()).lower().split('/')[1]
 
-        # argument has value ...
-        if argument is not None:
-            error('need \'function\' argument to use the \'argument\' argument ...')
-            return
+    # get country ...
+    country = str(get_country(city))
 
-        # output has value ...
-        if output is not None:
-            error('need \'function\' argument to use the \'output\' argument ...')
-            return
+    # get username ...
+    username = str(getuser())
+
+    # get os ...
+    os = str(system().lower())
+
+    # get version ...
+    version = str(release().lower())
+
+    # get architecture
+    architecture = str(machine().lower())
+
+    # get date ...
+    date = str(datetime.now()).split(' ')[0]
+
+    # get time ...
+    time = str(datetime.now()).split(' ')[1].split('.')[0]
+
+    # log type
+    log_type = 'text'
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -186,7 +194,7 @@ def text(text_log=None, save=None, size=None):
     spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
         city, country, continent, username, os, version, architecture)
     spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
-    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       | line | '
+    specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
 
     # if is not log file ...
     if not isfile(log_file_name):
@@ -197,7 +205,8 @@ def text(text_log=None, save=None, size=None):
 
             # write 'log' to log file ...
             log_file.write(
-                log_row(1, date, time, text, len(spec_center), justified_python_file, justified_line_python_file))
+                log_row(1, date, time, text_log, len(spec_center), justified_python_file, log_type,
+                        justified_line_python_file))
 
     # if is log file ...
     elif isfile(log_file_name):
@@ -207,13 +216,27 @@ def text(text_log=None, save=None, size=None):
                                     "previously defined log file size , can't be resized ..."))
                 return
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+        # find line number ...
 
-    # fix show text color ...
-    system('')
+        with open(log_file_name, 'r') as f:
+            line_number = f.read().splitlines()[-2].split('| ' + str(datetime.now().year) + '-', 1)[0]
+            line_number = line_number.replace('|', '')
+            line_number = line_number.replace(' ', '')
+            line_number = int(line_number) + 1
 
-    # if finished is True break animate function ...
-    finished = False
+        # ckeck log file line number ...
+        if len(str(line_number)) > 7:
+            print(err_temp_func(python_file_name, line_python_file,
+                                "'size = 5' maximum line number support is 9999999 ..."))
+            return
+
+        # set value for log file line number ...
+        if len(str(line_number)) <= 7:
+            log_file_number = justify_text(line_number, 7)
+        else:
+            print(err_temp_func(python_file_name, line_python_file,
+                                'maximum number to numbering lines support is 9999999 ...'))
+            return
 
         # open log file ...
         with open(log_file_name, 'a') as log_file:
