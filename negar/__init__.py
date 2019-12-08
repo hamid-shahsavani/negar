@@ -1,1 +1,1 @@
-from .negar import text
+from .negar import text , error
