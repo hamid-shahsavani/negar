@@ -1,6 +1,7 @@
 # Copyright SYS113 2019. MIT license , see README.md file.
 
 # import libraries ...
+from re import search
 from traceback import format_exc
 from tzlocal import get_localzone
 from datetime import datetime
@@ -11,41 +12,46 @@ from inspect import getframeinfo, stack
 from negar.countriesWithTheirCapital import countries
 
 
+# helper function for country capital
+def get_country(_city):
+    data = countries
+    if _city in data:
+        return data[_city]
+    else:
+        return 'unknown'
+
+
+# helper function for negar module errors printing
+def err_temp_func(file_, line, problem):
+    error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
+    return error_template.format(file_, line, problem)
+
+
+# helper function for justify text center with fixed length
+def justify_text(text_, length):
+    return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
+
+
+# helper function for create header row
+def header_row(header_specs):
+    sep = '—' * (len(header_specs) - 4)
+    out = '\n  .{1}.\n {0}\n  |{1}|\n'.format(header_specs, sep)
+    return out
+
+
+# helper function for create each log row
+def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_type, row_line_num):
+    row_num = justify_text(row_num, 7)
+    row_type = justify_text(row_type, 8)
+    out = '  |{num}| {date} | {time} | {text}{pad}|{file}|{type}|{line}|\n'.format(
+        num=row_num, date=log_date, time=log_time, text=row_text, file=row_file_name, type=row_type,
+        line=row_line_num, pad=' ' * (row_log_size - (len(row_text) + 1)))
+    out += '  |{}|\n'.format('—' * (len(out) - 5))
+    return out
+
+
 # create text log function ...
 def text(text_log=None, save=None, size=None):
-    # helper function for country capital
-    def get_country(_city):
-        data = countries
-        if _city in data:
-            return data[_city]
-        else:
-            return 'unknown'
-
-    # helper function for negar module errors printing
-    def err_temp_func(file_, line, problem):
-        error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
-        return error_template.format(file_, line, problem)
-
-    # helper function for justify text center with fixed length
-    def justify_text(text_, length):
-        return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
-
-    # helper function for create header row
-    def header_row(header_specs):
-        sep = '—' * (len(header_specs) - 4)
-        out = '\n  .{1}.\n {0}\n  |{1}|\n'.format(header_specs, sep)
-        return out
-
-    # helper function for create each log row
-    def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, row_type, row_line_num):
-        row_num = justify_text(row_num, 7)
-        row_type = justify_text(row_type, 8)
-        out = '  |{num}| {date} | {time} | {text}{pad}|{file}|{type}|{line}|\n'.format(
-            num=row_num, date=log_date, time=log_time, text=row_text, file=row_file_name, type=row_type,
-            line=row_line_num, pad=' ' * (row_log_size - (len(log_file_text) + 1)))
-        out += '  |{}|\n'.format('—' * (len(out) - 5))
-        return out
-
     # find (filename or line) python file ...
     x = stack()[1]
     x = x[0]
@@ -67,7 +73,7 @@ def text(text_log=None, save=None, size=None):
     # set value for find python file name ...
     python_file_name = str(get_log_file_python_file_name_or_line.filename.split('/')[-1])
 
-    if python_file_name == '<stdin>':
+    if python_file_name in ['<stdin>', '<input>']:
         python_file = 'interpreter'
     elif len(python_file_name) < 18:
         python_file = python_file_name
@@ -245,9 +251,9 @@ def text(text_log=None, save=None, size=None):
             log_file.write(log_row(log_file_number, date, time, text_log, len(spec_center), justified_python_file,
                                    log_type, justified_line_python_file))
 
+
 # create error log function ...
 def error(save=None, size=None):
-
     # write exception to error_log variable ...
     error_log = format_exc()
 
@@ -255,46 +261,17 @@ def error(save=None, size=None):
     error_text = str(error_log.splitlines()[-1])
 
     # file name ...
-    python_file_name = str(error_log.split("\"")[1])
-
-    # line python file ...
-
-    step_1 = error_log.split(",")[1]
-    step_2 = step_1.split("line ")[1]
-    line_python_file = str(step_2)
-
-    print(line_python_file)
-
-    # helper function for country capital
-    def get_country(_city):
-        data = countries
-        if _city in data:
-            return data[_city]
+    python_file_name = search('File "(.*)", line (.*), in (.*)', error_log.splitlines()[-2]).groups()
+    for i in error_log.splitlines()[-3:0:-1]:
+        x = search('File "(.*)", line (.*), in (.*)', i).groups()
+        if x and python_file_name[2] == x[2]:
+            python_file_name = x
         else:
-            return 'unknown'
+            break
+    # line python file ...
+    line_python_file = str(python_file_name[1])
 
-    # helper function for negar module errors printing
-    def err_temp_func(file_, line, problem):
-        error_template = 'negar module - error | python file : {} | line : {} | problem : {}'
-        return error_template.format(file_, line, problem)
-
-    # helper function for justify text center with fixed length
-    def justify_text(text_, length):
-        return '{}{}{}'.format(int((length - len(str(text_))) / 2) * ' ', text_, length * ' ')[:length]
-
-    # helper function for create header row
-    def header_row(header_specs):
-        sep = '—' * (len(header_specs) - 4)
-        out = '\n  .{1}.\n {0}\n  |{1}|\n'.format(header_specs, sep)
-        return out
-
-    # helper function for create each log row
-    def log_row(row_num, log_date, log_time, error_text, row_log_size, row_file_name, row_type ,row_line_num):
-        out = '  |{}| {} | {} | {}{}|{}|  {} |{}|\n'.format(justify_text(row_num, 7), log_date, log_time, error_text,
-                                                      ' ' * (row_log_size - (len(log_file_text) + 1)),
-                                                      row_file_name, row_type, row_line_num)
-        out += '  |{}|\n'.format('—' * (len(out) - 5))
-        return out
+    python_file_name = str(python_file_name[0])
 
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
     '''                                                    
@@ -306,7 +283,7 @@ def error(save=None, size=None):
     '''
     # -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    if python_file_name == '<stdin>':
+    if python_file_name in ['<stdin>', '<input>']:
         python_file = 'interpreter'
     elif len(python_file_name) < 18:
         python_file = python_file_name
@@ -431,7 +408,8 @@ def error(save=None, size=None):
 
             # write 'log' to log file ...
             log_file.write(
-                log_row(1, date, time, error_text, len(spec_center), justified_python_file, log_type, justified_line_python_file))
+                log_row(1, date, time, error_text, len(spec_center), justified_python_file, log_type,
+                        justified_line_python_file))
 
     # if is log file ...
     elif isfile(log_file_name):
@@ -467,4 +445,4 @@ def error(save=None, size=None):
         with open(log_file_name, 'a') as log_file:
             # add new 'log' to log file ...
             log_file.write(log_row(log_file_number, date, time, error_text, len(spec_center), justified_python_file,
-                                   log_type,justified_line_python_file))
+                                   log_type, justified_line_python_file))
