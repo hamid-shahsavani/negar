@@ -57,7 +57,7 @@ def text(text_log=None, save=None, size=None):
     x = x[0]
     get_log_file_python_file_name_or_line = getframeinfo(x)
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
     '''                                                    
     'find line in python file' variable is 'line_python_file'
     'find python file name' variable is 'python_file'
@@ -65,7 +65,7 @@ def text(text_log=None, save=None, size=None):
     'log text' variable is 'log_text'
     'set log file size' variable is 'log_file_size'
     '''
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # set value for find line in python file ...
     line_python_file = str(get_log_file_python_file_name_or_line.lineno)
@@ -87,38 +87,38 @@ def text(text_log=None, save=None, size=None):
     elif save is None:
         log_file = 'log.txt'
     else:
-        print(err_temp_func(python_file_name, line_python_file, '\'save\' type is not str ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"save" type is not str ...'))
         return
 
     # set value for log text ...
     if text_log is None:
-        print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"text" value is empty ...'))
         return
     elif not isinstance(text_log, str):
-        print(err_temp_func(python_file_name, line_python_file, '\'text\' type is not str ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"text" type is not str ...'))
         return
     elif text_log == '':
-        print(err_temp_func(python_file_name, line_python_file, '\'text\' value is empty ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"text" value is empty ...'))
         return
     else:
         log_text = text_log
 
     # set value for log file size ...
     if size is None:
-        log_size = 2
+        log_size = 3
     elif not isinstance(size, int):
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' type is not str ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" type is not str ...'))
         return
     elif size > 5:
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' value range is not (1 ... 5) ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" value range is not (1 ... 5) ...'))
         return
     elif size == 0:
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' value is not in range (1 ... 5) ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" value is not in range (1 ... 5) ...'))
         return
     else:
         log_size = size
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
     '''
     'write python file name in log file' variable is 'justified_python_file'
     'write line of python file in log file' variable is 'justified_line_python_file'
@@ -126,23 +126,23 @@ def text(text_log=None, save=None, size=None):
     'log file name' variable is 'log_file_name'
     'log file size' variable is 'log_file_size'
     '''
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # check character size ...
     if (log_size == 1) and (len(log_text) > 69):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 1\' maximum 69 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 1" maximum 69 character support ...'))
         return
     elif (log_size == 2) and (len(log_text) > 93):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 2\' maximum 93 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 2" maximum 93 character support ...'))
         return
     elif (log_size == 3) and (len(log_text) > 131):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 3\' maximum 131 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 3" maximum 131 character support ...'))
         return
     elif (log_size == 4) and (len(log_text) > 199):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 4\' maximum 199 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 4" maximum 199 character support ...'))
         return
     elif (log_size == 5) and (len(log_text) > 397):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 5\' maximum 397 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 5" maximum 397 character support ...'))
         return
 
     # set value for write python file name in log file ...
@@ -155,15 +155,12 @@ def text(text_log=None, save=None, size=None):
         print(err_temp_func(python_file_name, line_python_file, 'maximum python line number support is 999999 ...'))
         return
 
-    # set value for write log text in log file ...
-    log_file_text = log_text
-
     # set value for log file name ...
     log_file_name = log_file
 
     # set value for log file size ...
     log_file_size = round(((6 - 0.3) / 100) * ((5 - [0.1, 2.9, 3.9, 4.4, 4.7][log_size - 1]) * 20), 1)
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # get continent ...
     continent = str(get_localzone()).lower().split('/')[0]
@@ -195,7 +192,7 @@ def text(text_log=None, save=None, size=None):
     # log type
     log_type = 'text'
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # show city , country , continent , username , os , version , architecture in log file ...
     spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
@@ -256,13 +253,15 @@ def text(text_log=None, save=None, size=None):
 def error(save=None, size=None):
     # write exception to error_log variable ...
     error_log = format_exc()
+    if len(error_log.splitlines()) < 2:
+        return
 
     # error log ...
     error_text = str(error_log.splitlines()[-1])
-
+    a = [*filter(lambda x: x.find('File') > -1, error_log.splitlines())]
     # file name ...
-    python_file_name = search('File "(.*)", line (.*), in (.*)', error_log.splitlines()[-2]).groups()
-    for i in error_log.splitlines()[-3:0:-1]:
+    python_file_name = search('File "(.*)", line (.*), in (.*)', a[-1]).groups()
+    for i in a[:-1][::-1]:
         x = search('File "(.*)", line (.*), in (.*)', i).groups()
         if x and python_file_name[2] == x[2]:
             python_file_name = x
@@ -271,9 +270,9 @@ def error(save=None, size=None):
     # line python file ...
     line_python_file = str(python_file_name[1])
 
-    python_file_name = str(python_file_name[0])
+    python_file_name = str(python_file_name[0]).split('/')[-1]
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
     '''                                                    
     'find line in python file' variable is 'line_python_file'
     'find python file name' variable is 'python_file'
@@ -281,7 +280,7 @@ def error(save=None, size=None):
     'log text' variable is 'log_text'
     'set log file size' variable is 'log_file_size'
     '''
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     if python_file_name in ['<stdin>', '<input>']:
         python_file = 'interpreter'
@@ -297,25 +296,25 @@ def error(save=None, size=None):
     elif save is None:
         log_file = 'log.txt'
     else:
-        print(err_temp_func(python_file_name, line_python_file, '\'save\' type is not str ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"save" type is not str ...'))
         return
 
     # set value for log file size ...
     if size is None:
         log_size = 3
     elif not isinstance(size, int):
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' type is not str ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" type is not str ...'))
         return
     elif size > 5:
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' value range is not (1 ... 5) ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" value range is not (1 ... 5) ...'))
         return
     elif size == 0:
-        print(err_temp_func(python_file_name, line_python_file, '\'size\' value is not in range (1 ... 5) ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size" value is not in range (1 ... 5) ...'))
         return
     else:
         log_size = size
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
     '''
     'write python file name in log file' variable is 'justified_python_file'
     'write line of python file in log file' variable is 'justified_line_python_file'
@@ -323,23 +322,23 @@ def error(save=None, size=None):
     'log file name' variable is 'log_file_name'
     'log file size' variable is 'log_file_size'
     '''
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # check character size ...
     if (log_size == 1) and (len(error_text) > 69):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 1\' maximum 69 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 1" maximum 69 character support ...'))
         return
     elif (log_size == 2) and (len(error_text) > 93):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 2\' maximum 93 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 2" maximum 93 character support ...'))
         return
     elif (log_size == 3) and (len(error_text) > 131):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 3\' maximum 131 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 3" maximum 131 character support ...'))
         return
     elif (log_size == 4) and (len(error_text) > 199):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 4\' maximum 199 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 4" maximum 199 character support ...'))
         return
     elif (log_size == 5) and (len(error_text) > 397):
-        print(err_temp_func(python_file_name, line_python_file, '\'size = 5\' maximum 397 character support ...'))
+        print(err_temp_func(python_file_name, line_python_file, '"size = 5" maximum 397 character support ...'))
         return
 
     # set value for write python file name in log file ...
@@ -352,15 +351,12 @@ def error(save=None, size=None):
         print(err_temp_func(python_file_name, line_python_file, 'maximum python line number support is 999999 ...'))
         return
 
-    # set value for write log text in log file ...
-    log_file_text = error_text
-
     # set value for log file name ...
     log_file_name = log_file
 
     # set value for log file size ...
     log_file_size = round(((6 - 0.3) / 100) * ((5 - [0.1, 2.9, 3.9, 4.4, 4.7][log_size - 1]) * 20), 1)
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
     # get continent ...
     continent = str(get_localzone()).lower().split('/')[0]
 
@@ -391,7 +387,7 @@ def error(save=None, size=None):
     # log type
     log_type = 'error'
 
-    # -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------------------------------------
 
     # show city , country , continent , username , os , version , architecture in log file ...
     spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
