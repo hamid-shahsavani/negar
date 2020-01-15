@@ -110,7 +110,7 @@
 * *[telegram](https://t.me/SYS113/)*
 * *[instagram](https://instagram.com/sys113/)*
 ---
-## *last world*
+## *last word*
 *hope this is <ins>negar</ins> useful to you and enjoy it.*
 
 ---
