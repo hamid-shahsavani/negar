@@ -101,13 +101,7 @@
 
 ---
 ## *thanks*
-+ *mohamad moradiyani*
-+ *Hamed 169*
-
----
-<div align="center">
-
-*negar logo ❤️ mohamad moradiyani*
-</div>
++ *mohamad moradiyani for negar module logo*
++ *Hamed 169 for optimize negar module source code*
 
 ---
