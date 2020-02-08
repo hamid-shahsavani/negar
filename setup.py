@@ -7,14 +7,14 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
   name = "negar",
-  version = "0.3.0",
-  description = "call negar in your python source code and log to a file ...",
+  version = "0.4.0",
+  description = "call negar in your python source code and error & text log to a file ...",
   long_description=long_description,
   long_description_content_type="text/markdown",
   author = "SYS113",
   author_email = "051.SYS113@gmail.com",
   url = "https://github.com/sys113/negar",
-  keywords = ["negar", "log", "save"],
+  keywords = ["negar", "log", "error", "save"],
   packages = find_packages(),
   install_requires=['tzlocal'],
   classifiers=[
