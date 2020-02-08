@@ -42,10 +42,8 @@
 
 ---
 ## *example*
-+ #### text function
-*[method one](https://github.com/sys113/negar/raw/master/example/method-one.gif)*
-*[method two](https://raw.githubusercontent.com/sys113/negar/master/example/method-two.gif)*
-
++ #### text function | *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
++ #### error function | *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 ---
 ## *review*
 <p align="center">
