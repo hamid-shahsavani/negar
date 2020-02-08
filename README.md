@@ -14,6 +14,12 @@
 </div>
 
 ---
+## *review*
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/review.png">
+</p>
+
+---
 ## *what is <ins>negar</ins>*
 *call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
 
@@ -42,13 +48,8 @@
 
 ---
 ## *example*
-+ #### text function |*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
-+ #### error function   *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
----
-## *review*
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/review.png">
-</p>
++ #### text function &nbsp;&nbsp;&nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
++ #### error function   &nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 
 ---
 ## *description*
@@ -97,6 +98,11 @@
 ---
 ## *last word*
 *hope this is <ins>negar</ins> useful to you and enjoy it.*
+
+---
+## *thanks*
++ *mohamad moradiyani*
++ *Hamed 169*
 
 ---
 <div align="center">
