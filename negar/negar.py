@@ -1,6 +1,6 @@
 # Copyright SYS113 2019. MIT license , see README.md file.
 
-# import libraries ...
+# import libraries 
 from re import search
 from traceback import format_exc
 from tzlocal import get_localzone
@@ -52,6 +52,7 @@ def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, 
 
 # create text log function ...
 def text(text_log=None, save=None, size=None):
+
     # find (filename or line) python file ...
     x = stack()[1]
     x = x[0]
@@ -207,7 +208,7 @@ def text(text_log=None, save=None, size=None):
             # write ' ___ ' to log file ...
             log_file.write(header_row(specifications))
 
-            # write 'log' to log file ...
+            # write 'error & text' to log file ...
             log_file.write(
                 log_row(1, date, time, text_log, len(spec_center), justified_python_file, log_type,
                         justified_line_python_file))
@@ -243,13 +244,15 @@ def text(text_log=None, save=None, size=None):
 
         # open log file ...
         with open(log_file_name, 'a') as log_file:
-            # add new 'log' to log file ...
+
+            # add new 'error & text' to log file ...
             log_file.write(log_row(log_file_number, date, time, text_log, len(spec_center), justified_python_file,
                                    log_type, justified_line_python_file))
 
 
 # create error log function ...
 def error(save=None, size=None):
+
     # write exception to error_log variable ...
     error_log = format_exc()
     if len(error_log.splitlines()) < 2:
@@ -258,6 +261,7 @@ def error(save=None, size=None):
     # error log ...
     error_text = str(error_log.splitlines()[-1])
     a = [*filter(lambda x: x.find('File') > -1, error_log.splitlines())]
+
     # file name ...
     python_file_name = search('File "(.*)", line (.*), in (.*)', a[-1]).groups()
     for i in a[:-1][::-1]:
@@ -266,9 +270,11 @@ def error(save=None, size=None):
             python_file_name = x
         else:
             break
+
     # line python file ...
     line_python_file = str(python_file_name[1])
 
+    # name python file ...
     python_file_name = str(python_file_name[0]).split('/')[-1]
 
     # ----------------------------------------------------------------------------------------------------------------
@@ -396,12 +402,14 @@ def error(save=None, size=None):
 
     # if is not log file ...
     if not isfile(log_file_name):
+
         # create log file ...
         with open(log_file_name, 'w') as log_file:
+
             # write ' ___ ' to log file ...
             log_file.write(header_row(specifications))
 
-            # write 'log' to log file ...
+            # write 'error & text' to log file ...
             log_file.write(
                 log_row(1, date, time, error_text, len(spec_center), justified_python_file, log_type,
                         justified_line_python_file))
@@ -437,6 +445,6 @@ def error(save=None, size=None):
 
         # open log file ...
         with open(log_file_name, 'a') as log_file:
-            # add new 'log' to log file ...
+            # add new 'error & text' to log file ...
             log_file.write(log_row(log_file_number, date, time, error_text, len(spec_center), justified_python_file,
                                    log_type, justified_line_python_file))
