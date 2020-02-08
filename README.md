@@ -42,8 +42,8 @@
 
 ---
 ## *example*
-+ #### text function | *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
-+ #### error function | *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
++ #### text function |*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
++ #### error function   *[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 ---
 ## *review*
 <p align="center">
@@ -52,10 +52,10 @@
 
 ---
 ## *description*
-  + #### *text*
+  + #### *log_text*
     ```python
-      # write 'text' to log file
-      text = 'negar' 
+      # write 'log_text' to log file
+      log_text = 'negar' 
     ```
   + #### *save*
     ```python
@@ -68,22 +68,7 @@
       size = 2
     ```
 ---
-## *usage*
-  + #### *method one*
-    ```python
-      # good
-      import negar
-      name = 'SYS113'
-      negar.log('name value is '+str(name)+' ...')
-    ```
-  + #### *method two* 
-    ```python
-      # excellent
-      from negar import log
-      name = 'SYS113'
-      log(text = 'name value is '+str(name)+' ...', save = 'negar.txt', size = 3)
-    ```
----
+
 ## *tips*
 + *log file default size is 2 ...*
 + *log file size range is 1 ... 5 number ...*
