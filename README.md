@@ -21,7 +21,7 @@
 
 ---
 ## *what is <ins>negar</ins>*
-*call <ins>negar</ins> in your python source code and log to a file</ins> ...<br />*
+*call <ins>negar</ins> module in your python source code and write error log & text log to a file</ins> ...<br />*
 
 ---
 ## *installation*
@@ -96,12 +96,11 @@
 * *[telegram](https://t.me/SYS113/)*
 * *[instagram](https://instagram.com/sys113/)*
 ---
-## *last word*
-*hope this is <ins>negar</ins> useful to you and enjoy it.*
-
----
 ## *thanks*
 + *mohamad moradiyani for negar module logo*
 + *Hamed 169 for optimize negar module source code*
+---
+## *last word*
+*hope this is <ins>negar</ins> useful to you and enjoy it.*
 
 ---
