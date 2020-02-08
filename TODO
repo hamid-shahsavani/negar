@@ -1,5 +1,5 @@
-- set write python file name to log file by negar.log function arg , example : negar.log(text = 'hi' , python-file-name = False) # default True
-- set write python source code line to log file by legar.log function arg , example : negar.log(text = 'hi' , python-file-line = False) # default True
-- set write date by negar.log to log file function arg , example : negar.log(text = 'hi' , date = False) # default True
-- set write time by negar.log to log file function arg , example : negar.log(text = 'hi' , date = False) # default True
+- set write python file name to log file by negar.text function arg , example : negar.text(text = 'hi' , python-file-name = False) # default True
+- set write python source code line to log file by legar.text function arg , example : negar.text(text = 'hi' , python-file-line = False) # default True
+- set write date by negar.text to log file function arg , example : negar.text(text = 'hi' , date = False) # default True
+- set write time by negar.text to log file function arg , example : negar.text(text = 'hi' , date = False) # default True
 
