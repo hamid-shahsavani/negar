@@ -58,3 +58,14 @@
 	- convert negar source code to be pep8 style ...
 
 	- fix bug write country to log file ...
+	
++ 0.4.0
+
+	- add error function
+		* write python project exceptions to a file
+	
+	- rename log function name 
+		from negar.log to negar.text
+		
+	- rename text argument
+		* from negar.text(text='hi') to negar.text(text_log='hi')
