@@ -65,7 +65,7 @@
 		* write python project exceptions to a file
 	
 	- rename log function name 
-		from negar.log to negar.text
+		* from negar.log to negar.text
 		
 	- rename text argument
 		* from negar.text(text='hi') to negar.text(text_log='hi')
