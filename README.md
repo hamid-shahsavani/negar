@@ -42,12 +42,14 @@
 
 ---
 ## *example*
-+ #### *[method one](https://github.com/sys113/negar/raw/master/example/method-one.gif)*
-+ #### *[method two](https://raw.githubusercontent.com/sys113/negar/master/example/method-two.gif)*
++ #### text function
+*[method one](https://github.com/sys113/negar/raw/master/example/method-one.gif)*
+*[method two](https://raw.githubusercontent.com/sys113/negar/master/example/method-two.gif)*
+
 ---
 ## *review*
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/example.png">
+  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/review.png">
 </p>
 
 ---
