@@ -221,7 +221,6 @@ def text(text_log=None, save=None, size=None):
                 return
 
         # find line number ...
-
         with open(log_file_name, 'r') as f:
             line_number = f.read().splitlines()[-2].split('| ' + str(datetime.now().year) + '-', 1)[0]
             line_number = line_number.replace('|', '')
@@ -385,7 +384,7 @@ def error(save=None, size=None):
     time = str(datetime.now()).split(' ')[1].split('.')[0]
 
     # log type
-    log_type = 'error'
+    log_type = ' error'
 
     # ----------------------------------------------------------------------------------------------------------------
 
@@ -416,7 +415,6 @@ def error(save=None, size=None):
                 return
 
         # find line number ...
-
         with open(log_file_name, 'r') as f:
             line_number = f.read().splitlines()[-2].split('| ' + str(datetime.now().year) + '-', 1)[0]
             line_number = line_number.replace('|', '')
