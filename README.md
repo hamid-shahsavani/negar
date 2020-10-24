@@ -60,7 +60,7 @@
     ```
   + #### *line*
     ```python
-      # set 'Flase' and 'True' value for show line python file in log file ... 
+      # set 'Flase' and 'True' value for show line python file in log file , default is False ... 
       line = True
     ```
     
