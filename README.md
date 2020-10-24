@@ -58,6 +58,12 @@
       # write 'log_text' to log file
       log_text = 'negar' 
     ```
+  + #### *line*
+    ```python
+      # set 'Flase' and 'True' value for show line python file in log file ... 
+      line = True
+    ```
+    
   + #### *save*
     ```python
       # write log to 'negar-log.txt'
