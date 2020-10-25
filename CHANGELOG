@@ -69,3 +69,15 @@
 		
 	- rename text argument
 		* from negar.text(text='hi') to negar.text(text_log='hi')
+
+
++ 0.5.0
+
+	- add 'line' argument in error & text function
+		* set 'Flase' and 'True' value for show line python file in log file , default is False ... 
+
+	- add 'time' argument in error & text function
+		* set 'Flase' and 'True' value for show line python file in log file , default is False ... 
+
+	- add 'line' argument in error & text function
+		* set 'Flase' and 'True' value for show line python file in log file , default is False ... 
