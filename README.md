@@ -63,6 +63,18 @@
       # set 'Flase' and 'True' value for show line python file in log file , default is False ... 
       line = True
     ```
+
+  + #### *date*
+    ```python
+      # set 'Flase' and 'True' value for show date in log file , default is True ... 
+      line = True
+    ```
+
+  + #### *time*
+    ```python
+      # set 'Flase' and 'True' value for time in log file , default is True ... 
+      line = True
+    ```
     
   + #### *save*
     ```python
