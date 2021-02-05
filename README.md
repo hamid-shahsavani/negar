@@ -40,11 +40,11 @@
 
       # linux
       
-      sudo python3 -m pip install https://github.com/sys113/negar/archive/0.5.0.zip
+      sudo python3 -m pip install https://github.com/sys113/negar/archive/0.6.0.zip
       
       # windows
       
-      py -m pip install https://github.com/sys113/negar/archive/0.5.0.zip
+      py -m pip install https://github.com/sys113/negar/archive/0.6.0.zip
 
 ---
 ## *example*
@@ -85,6 +85,11 @@
     ```python
       # set 'size' for log file 
       size = 2
+    ```
+  + #### *title*
+    ```python
+      # set 'title' for write custom log file title , defult is 'city < country < continent | user name | os > os version > architecture'
+      title = 'log file title'
     ```
 ---
 
