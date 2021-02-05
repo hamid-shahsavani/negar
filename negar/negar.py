@@ -51,7 +51,7 @@ def log_row(row_num, log_date, log_time, row_text, row_log_size, row_file_name, 
 
 
 # create text log function ...
-def text(text_log=None, save=None, size=None , line=None , date=None , time=None):
+def text(text_log=None, save=None, size=None , line=None , date=None , time=None , title=None):
 
 	# find (filename or line) python file ...
 	x = stack()[1]
@@ -214,10 +214,20 @@ def text(text_log=None, save=None, size=None , line=None , date=None , time=None
 	# ----------------------------------------------------------------------------------------------------------------
 
 	# show city , country , continent , username , os , version , architecture in log file ...
-	spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
+	sp_center = '%s < %s < %s | %s | %s > %s > %s' % (
 		city, country, continent, username, os, version, architecture)
-	spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
-	specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
+	spec_center = justify_text(sp_center, 2 * int(len(sp_center) / log_file_size) + len(sp_center))
+	T = (len(spec_center)-len(sp_center))/2
+
+	if title is not None:
+		if len(title) > len(spec_center):
+			print(err_temp_func(str(get_log_file_python_file_name_or_line.filename.split('/')[-1]), str(get_log_file_python_file_name_or_line.lineno), 'maximum \'title\' size is '+str(len(spec_center))+' ...'))
+			return
+
+	if (title is None) or (title is False):
+		specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
+	else:
+		specifications = ' |  num  |    date    |   time   |' + title.center(len(spec_center)) + '|       file       |  type  | line | '
 
 	# if is not log file ...
 	if not isfile(log_file_name):
@@ -268,7 +278,7 @@ def text(text_log=None, save=None, size=None , line=None , date=None , time=None
 
 
 # create error log function ...
-def error(save=None, size=None, line=None , time=None , date=None):
+def error(save=None, size=None, line=None , time=None , date=None , title=None):
 
 	# find (filename or line) python file ...
 	x = stack()[1]
@@ -432,12 +442,30 @@ def error(save=None, size=None, line=None , time=None , date=None):
 		print(err_temp_func(str(get_log_file_python_file_name_or_line.filename.split('/')[-1]), str(get_log_file_python_file_name_or_line.lineno), '"date" value is not boolean ...'))
 		return
 	# ----------------------------------------------------------------------------------------------------------------
-
+	'''
 	# show city , country , continent , username , os , version , architecture in log file ...
 	spec_center = '%s < %s < %s | %s | %s > %s > %s' % (
 		city, country, continent, username, os, version, architecture)
 	spec_center = justify_text(spec_center, 2 * int(len(spec_center) / log_file_size) + len(spec_center))
 	specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
+	'''
+
+	# show city , country , continent , username , os , version , architecture in log file ...
+	sp_center = '%s < %s < %s | %s | %s > %s > %s' % (
+		city, country, continent, username, os, version, architecture)
+	spec_center = justify_text(sp_center, 2 * int(len(sp_center) / log_file_size) + len(sp_center))
+	T = (len(spec_center)-len(sp_center))/2
+	
+	if title is not None:
+		if len(title) > len(spec_center):
+			print(err_temp_func(str(get_log_file_python_file_name_or_line.filename.split('/')[-1]), str(get_log_file_python_file_name_or_line.lineno), 'maximum \'title\' size is '+str(len(spec_center))+' ...'))
+			return
+
+	if (title is None) or (title is False):
+		specifications = ' |  num  |    date    |   time   |' + spec_center + '|       file       |  type  | line | '
+	else:
+		specifications = ' |  num  |    date    |   time   |' + title.center(len(spec_center)) + '|       file       |  type  | line | '
+
 
 	# if is not log file ...
 	if not isfile(log_file_name):
