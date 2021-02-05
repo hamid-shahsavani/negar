@@ -81,3 +81,7 @@
 
 	- add 'line' argument in error & text function
 		* set 'Flase' and 'True' value for show line python file in log file , default is False ... 
+
++ 0.6.0
+	- add 'title' argument in error & text function
+		* set str value for show text in log file text , default is not show custom str , default is 'city < country < continent | user name | os > os version > architecture'
