@@ -49,7 +49,7 @@
 ---
 ## *example*
 + #### text function &nbsp;&nbsp;&nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
-```python
++```python
 
 # method one - good
 
@@ -64,6 +64,7 @@ def test():
 negar.text(f"'test' function return value is '{test()}'")
 
 print("end ...")
+```
 
 + #### error function   &nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 
