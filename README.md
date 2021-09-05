@@ -83,13 +83,30 @@ def test():
 text(text_log = f"'test' function return value is '{test()}'" , save = "file.txt" , size = 1 , title = "Project Logs" , time = False , line = True , date = True)
 
 print("end ...")
-
 ```
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/text-2.png">
+  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/text.png">
 </p>
 
-+ #### error function   &nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
++ #### error function   &nbsp;&nbsp;
+```python
+
+# method one - good
+
+import negar
+
+def project():
+    print("hi!")
+    X
+
+try:
+    project()
+except:
+    negar.error()
+```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/error.png">
+</p>
 
 ---
 ## *description*
