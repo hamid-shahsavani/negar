@@ -58,9 +58,7 @@ import negar
 print("start ...")
 
 def test():
-
     a = 'sys113'
-    
     return a
 
 negar.text(f"'test' function return value is '{test()}'")
@@ -104,6 +102,23 @@ try:
 except:
     negar.error()
 ```
+
+```python
+
+# method two - excellent
+
+from negar import error
+
+def project():
+    print("hi!")
+    X
+
+try:
+    project()
+except:
+    error(size = 1 , save = error.txt , title = "Project Errors" , time = True , line = True , date = True)
+```
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/sys113/negar/master/example/error.png">
 </p>
