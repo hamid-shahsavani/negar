@@ -48,7 +48,7 @@
 
 ---
 ## *example*
-+ #### text function &nbsp;&nbsp;&nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
++ #### text function &nbsp;&nbsp;&nbsp;&nbsp;
 ```python
 
 # method one - good
@@ -105,13 +105,13 @@ print("end ...")
   + #### *date*
     ```python
       # set 'Flase' and 'True' value for show date in log file , default is True ... 
-      line = True
+      date = True
     ```
 
   + #### *time*
     ```python
       # set 'Flase' and 'True' value for time in log file , default is True ... 
-      line = True
+      time = True
     ```
     
   + #### *save*
