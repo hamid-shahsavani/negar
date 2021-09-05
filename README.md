@@ -49,6 +49,22 @@
 ---
 ## *example*
 + #### text function &nbsp;&nbsp;&nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/text/method%20two.png)*
+```python
+
+# method one - good
+
+import negar
+
+print("start ...")
+
+def test():
+    a = 'sys113'
+    return a
+
+negar.text(f"'test' function return value is '{test()}'")
+
+print("end ...")
+
 + #### error function   &nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 
 ---
