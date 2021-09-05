@@ -70,22 +70,24 @@ print("end ...")
 
 ```python
 
-# method one - excellent
+# method two - excellent
 
 from negar import text
 
 print("start ...")
 
 def test():
-
     a = 'sys113'
-    
     return a
 
-text(text_log = f"'test' function return value is '{test()}'" , save="file.txt" , size=1)
+text(text_log = f"'test' function return value is '{test()}'" , save = "file.txt" , size = 1 , title = "Project Logs" , time = False , line = True , date = True)
 
 print("end ...")
+
 ```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sys113/negar/master/example/text-2.png">
+</p>
 
 + #### error function   &nbsp;&nbsp;*[example one](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20one.png)* | *[example two](https://raw.githubusercontent.com/sys113/negar/master/example/error/method%20two.png)*
 
