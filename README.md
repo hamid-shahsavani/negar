@@ -116,7 +116,7 @@ def project():
 try:
     project()
 except:
-    error(size = 1 , save = error.txt , title = "Project Errors" , time = True , line = True , date = True)
+    error(size = 1 , save = 'error.txt' , title = "Project Errors" , time = True , line = True , date = True)
 ```
 
 <p align="center">
